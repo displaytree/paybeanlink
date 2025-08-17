@@ -1465,5 +1465,5 @@
       "discount": 0
     }
   ],
-  "new": true
+  "new": {"flag":true}
 }
