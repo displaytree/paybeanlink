@@ -57,6 +57,17 @@ async function initDatabase() {
       )
     `);
     
+    // Create production table if it doesn't exist
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS production (
+        id SERIAL PRIMARY KEY,
+        date TEXT NOT NULL UNIQUE,
+        data JSONB NOT NULL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      )
+    `);
+    
     console.log('Database tables initialized successfully');
   } catch (err) {
     console.error('Error initializing database tables:', err);
@@ -467,7 +478,59 @@ server.post("/sync/merchants/batch", async (req, res) => {
   }
 });
 
-// ...existing code...
+// Production data endpoints
+server.get("/sync/production", async (req, res) => {
+  try {
+    const result = await pool.query("SELECT * FROM production ORDER BY date DESC");
+    res.json(result.rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Database error" });
+  }
+});
+
+server.post("/sync/production", async (req, res) => {
+  try {
+    const { data } = req.body;
+    
+    // Parse the production data to extract the date
+    let productionData;
+    try {
+      productionData = JSON.parse(data);
+    } catch (err) {
+      console.error("Failed to parse production data:", err);
+      return res.status(400).json({ error: "Invalid production data format" });
+    }
+    
+    // Check if a production record with this date already exists
+    const existingResult = await pool.query(
+      "SELECT id FROM production WHERE date = $1",
+      [productionData.date]
+    );
+    
+    let result;
+    if (existingResult.rows.length > 0) {
+      // Update existing production record
+      result = await pool.query(
+        "UPDATE production SET data = $1, updated_at = CURRENT_TIMESTAMP WHERE date = $2 RETURNING *",
+        [productionData, productionData.date]
+      );
+      console.log("Updated production record with date:", productionData.date);
+    } else {
+      // Insert new production record
+      result = await pool.query(
+        "INSERT INTO production (date, data, created_at) VALUES ($1, $2, CURRENT_TIMESTAMP) RETURNING *",
+        [productionData.date, productionData]
+      );
+      console.log("Inserted new production record with date:", productionData.date);
+    }
+    
+    res.json({ success: true, data: result.rows[0] });
+  } catch (err) {
+    console.error("Error in production sync:", err);
+    res.status(500).json({ error: "Database error", message: err.message });
+  }
+});
 
 // 🔹 Mount json-server router last
 server.use(router);
