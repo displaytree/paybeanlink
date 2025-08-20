@@ -22,7 +22,7 @@
       "name": "Cheese"
     }
 	],
-   "merchant": [
+   "merchants": [
     {
       "name": "Bombay"
     },
@@ -33,7 +33,7 @@
       "name": "Vijitha"
     }
 	],
-   "data": [
+   "products": [
     {
       "name": "Classic Chicken Pizza",
       "price": 160,
@@ -1465,5 +1465,5 @@
       "discount": 0
     }
   ],
-  "new": {"flag": true}
+  "new": {"products": true, "supply": true, "merchants": true}
 }
