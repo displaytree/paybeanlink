@@ -1390,8 +1390,8 @@
       "discount": 0
     },
     {
-      "name": "wheat bread",
-      "price": 45,
+      "name": "Wheat bread",
+      "price": 50,
       "discount": 0
     },
     {
@@ -1463,7 +1463,63 @@
       "name": "Choco truffel Piece Cake",
       "price": 75,
       "discount": 0
+    },
+    {
+      "name": "hbd flag",
+      "price": 100,
+      "discount": 0
+    },
+    {
+      "name": "poppers",
+      "price": 50,
+      "discount": 0
+    },
+    {
+      "name": "dark chocolate waffels",
+      "price": 100,
+      "discount": 0
+    },
+    {
+      "name": "triple chocolate waffel",
+      "price": 120,
+      "discount": 0
+    },
+    {
+      "name": "caramel",
+      "price": 20,
+      "discount": 0
+    },
+    {
+      "name": "korean cream cheese bun",
+      "price": 130,
+      "discount": 0
+    },
+    {
+      "name": "extra cheee",
+      "price": 20,
+      "discount": 0
+    },
+    {
+      "name": "extra cheese",
+      "price": 30,
+      "discount": 0
+    },
+    {
+      "name": "caramel brownie",
+      "price": 100,
+      "discount": 0
+    },
+    {
+      "name": "choco filled donut",
+      "price": 80,
+      "discount": 0
+    },
+    {
+      "name": "rasamlai tres leches",
+      "price": 150,
+      "discount": 0
     }
   ],
-  "new": {"products": true, "supply": true, "merchants": true}
+  "new": {"products": true, "supply": true, "merchants": true},
+  "expiry": {"products": true, "supply": true, "merchants": true} 
 }
