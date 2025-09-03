@@ -1564,13 +1564,42 @@
   "new": [
     {
       "id": "1",
-      "item": { "products": true, "supply": true, "merchants": true }
+      "item": { "products": true, "supply": true, "merchants": true, "expiry": true }
     }
   ],
   "expiry": [
     {
       "id": "1",
-      "item": { "products": true, "supply": true, "merchants": true }
+      "items": [
+        {"date": "2025-09-01", "time": "23:59", "code": "SEP-6927-4158-QXZFMBVLK", "renew": false},
+        {"date": "2025-10-01", "time": "23:59", "code": "OCT-9435-2781-RWTZPABCN", "renew": false},
+        {"date": "2025-11-01", "time": "23:59", "code": "NOV-3518-7964-DGLKJHSXY", "renew": false},
+        {"date": "2025-12-01", "time": "23:59", "code": "DEC-7832-1546-MNTPQVRWE", "renew": false},
+        {"date": "2026-01-01", "time": "23:59", "code": "JAN-4621-8395-KBCFGHZAQ", "renew": false},
+        {"date": "2026-02-01", "time": "23:59", "code": "FEB-9137-5648-PSTUVXYRM", "renew": false},
+        {"date": "2026-03-01", "time": "23:59", "code": "MAR-3794-2186-JNWXDZLPT", "renew": false},
+        {"date": "2026-04-01", "time": "23:59", "code": "APR-6258-9413-BFGHKLQVS", "renew": false},
+        {"date": "2026-05-01", "time": "23:59", "code": "MAY-8165-7429-CTMRWXZPJ", "renew": false},
+        {"date": "2026-06-01", "time": "23:59", "code": "JUN-2934-6157-DHNSKABGF", "renew": false},
+        {"date": "2026-07-01", "time": "23:59", "code": "JUL-5871-3962-PYTVZRQCW", "renew": false},
+        {"date": "2026-08-01", "time": "23:59", "code": "AUG-7526-4913-MLNKHGFBD", "renew": false},
+        {"date": "2026-09-01", "time": "23:59", "code": "SEP-1387-6529-XZQWRTPLM", "renew": false},
+        {"date": "2026-10-01", "time": "23:59", "code": "OCT-8729-3641-ABCDEFGHI", "renew": false},
+        {"date": "2026-11-01", "time": "23:59", "code": "NOV-5216-7893-JKLMNOPQR", "renew": false},
+        {"date": "2026-12-01", "time": "23:59", "code": "DEC-9463-1578-STUVWXYZB", "renew": false},
+        {"date": "2027-01-01", "time": "23:59", "code": "JAN-3847-6925-CDFGHJKLP", "renew": false},
+        {"date": "2027-02-01", "time": "23:59", "code": "FEB-7159-2438-QRSTUVWZX", "renew": false},
+        {"date": "2027-03-01", "time": "23:59", "code": "MAR-5967-8314-AMNBVCXZY", "renew": false},
+        {"date": "2027-04-01", "time": "23:59", "code": "APR-8421-3975-PLOKIJMNH", "renew": false},
+        {"date": "2027-05-01", "time": "23:59", "code": "MAY-2643-7198-QAZWSXEDC", "renew": false},
+        {"date": "2027-06-01", "time": "23:59", "code": "JUN-9518-4672-RFVTGBYHN", "renew": false},
+        {"date": "2027-07-01", "time": "23:59", "code": "JUL-4176-8295-UJMIKLOPT", "renew": false},
+        {"date": "2027-08-01", "time": "23:59", "code": "AUG-6753-1489-YWXQAZPLS", "renew": false},
+        {"date": "2027-09-01", "time": "23:59", "code": "SEP-1825-3967-MKOJNHBGV", "renew": false},
+        {"date": "2027-10-01", "time": "23:59", "code": "OCT-7346-2591-FRCDEXSWZ", "renew": false},
+        {"date": "2027-11-01", "time": "23:59", "code": "NOV-5918-7634-VBTNYUMKL", "renew": false},
+        {"date": "2027-12-01", "time": "23:59", "code": "DEC-8274-3915-PQLWOEITX", "renew": false}
+      ]
     }
   ]
 }
