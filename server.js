@@ -19,6 +19,7 @@ async function initDatabase() {
     await pool.query(`
       CREATE TABLE IF NOT EXISTS merchants (
         id SERIAL PRIMARY KEY,
+        mid INTEGER DEFAULT 1,
         name TEXT NOT NULL UNIQUE,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -29,6 +30,7 @@ async function initDatabase() {
     await pool.query(`
       CREATE TABLE IF NOT EXISTS bills (
         id SERIAL PRIMARY KEY,
+        mid INTEGER DEFAULT 1,
         data JSONB NOT NULL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       )
@@ -38,6 +40,7 @@ async function initDatabase() {
     await pool.query(`
       CREATE TABLE IF NOT EXISTS inventory (
         id SERIAL PRIMARY KEY,
+        mid INTEGER DEFAULT 1,
         merchant_name TEXT NOT NULL,
         date TEXT NOT NULL,
         data JSONB NOT NULL,
@@ -51,6 +54,7 @@ async function initDatabase() {
     await pool.query(`
       CREATE TABLE IF NOT EXISTS supply (
         id SERIAL PRIMARY KEY,
+        mid INTEGER DEFAULT 1,
         name TEXT NOT NULL UNIQUE,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -61,6 +65,7 @@ async function initDatabase() {
     await pool.query(`
       CREATE TABLE IF NOT EXISTS production (
         id SERIAL PRIMARY KEY,
+        mid INTEGER DEFAULT 1,
         date TEXT NOT NULL UNIQUE,
         data JSONB NOT NULL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -95,14 +100,11 @@ server.get("/sync/bills", async (req, res) => {
 server.post("/sync/bills", async (req, res) => {
   try {
     const { data } = req.body;
-    
-    // Parse the bill data to extract the bill number
     let billData;
     try {
       billData = JSON.parse(data);
     } catch (err) {
-      console.error("Failed to parse bill data:", err);
-      return res.status(400).json({ error: "Invalid bill data format" });
+      billData = data;
     }
     
     // Check if a bill with this bill number already exists
@@ -122,8 +124,8 @@ server.post("/sync/bills", async (req, res) => {
     } else {
       // Insert new bill
       result = await pool.query(
-        "INSERT INTO bills (data) VALUES ($1) RETURNING *",
-        [data]
+        "INSERT INTO bills (mid, data) VALUES ($1, $2) RETURNING *",
+        [billData.mid || 1, data]
       );
       console.log("Inserted new bill with ID:", result.rows[0].id);
     }
@@ -135,8 +137,6 @@ server.post("/sync/bills", async (req, res) => {
     res.status(500).json({ error: "Database error", message: err.message });
   }
 });
-
-// ...existing code...
 
 // Sync inventory table
 server.get("/sync/inventory", async (req, res) => {
@@ -153,12 +153,10 @@ server.post("/sync/inventory", async (req, res) => {
   try {
     const { data } = req.body;
     let inventoryData;
-    
     try {
       inventoryData = JSON.parse(data);
     } catch (err) {
-      console.error("Failed to parse inventory data:", err);
-      return res.status(400).json({ error: "Invalid inventory data format" });
+      inventoryData = data;
     }
     
     // Check if inventory with this merchant_name and date already exists
@@ -178,8 +176,8 @@ server.post("/sync/inventory", async (req, res) => {
     } else {
       // Insert new inventory
       result = await pool.query(
-        "INSERT INTO inventory (merchant_name, date, data, created_at) VALUES ($1, $2, $3, CURRENT_TIMESTAMP) RETURNING *",
-        [inventoryData.merchantName, inventoryData.date, JSON.stringify(inventoryData.rows)]
+        "INSERT INTO inventory (mid, merchant_name, date, data, created_at) VALUES ($1, $2, $3, $4, CURRENT_TIMESTAMP) RETURNING *",
+        [inventoryData.mid || 1, inventoryData.merchantName, inventoryData.date, JSON.stringify(inventoryData.rows)]
       );
       console.log("Inserted new inventory with ID:", result.rows[0].id);
     }
@@ -231,7 +229,7 @@ server.post("/sync/inventories", async (req, res) => {
         } else {
           // Insert new inventory
           result = await pool.query(
-            "INSERT INTO inventory (merchant_name, date, data, created_at) VALUES ($1, $2, $3, CURRENT_TIMESTAMP) RETURNING *",
+            "INSERT INTO inventory (mid, merchant_name, date, data, created_at) VALUES ($1, $2, $3, $4, CURRENT_TIMESTAMP) RETURNING *",
             [inventory.merchantName, inventory.date, JSON.stringify(inventory.rows)]
           );
           console.log("Inserted new inventory with ID:", result.rows[0].id);
@@ -274,10 +272,10 @@ server.get("/sync/supply", async (req, res) => {
 
 server.post("/sync/supply", async (req, res) => {
   try {
-    const { name } = req.body;
+    const { name, mid } = req.body;
     const result = await pool.query(
-      "INSERT INTO supply (name) VALUES ($1) RETURNING *",
-      [name]
+      "INSERT INTO supply (mid, name) VALUES ($1, $2) RETURNING *",
+      [mid || 1, name]
     );
     res.json(result.rows[0]);
   } catch (err) {
@@ -370,11 +368,9 @@ server.post("/sync/merchants", async (req, res) => {
   try {
     const { data } = req.body;
     let merchantData;
-    
     try {
       merchantData = JSON.parse(data);
     } catch (err) {
-      // If data is already an object, no need to parse
       merchantData = data;
     }
     
@@ -395,8 +391,8 @@ server.post("/sync/merchants", async (req, res) => {
     } else {
       // Insert new merchant
       result = await pool.query(
-        "INSERT INTO merchants (name, created_at) VALUES ($1, CURRENT_TIMESTAMP) RETURNING *",
-        [merchantData.name]
+        "INSERT INTO merchants (mid, name, created_at) VALUES ($1, $2, CURRENT_TIMESTAMP) RETURNING *",
+        [merchantData.mid || 1, merchantData.name]
       );
       console.log("Inserted new merchant with ID:", result.rows[0].id);
     }
@@ -448,8 +444,8 @@ server.post("/sync/merchants/batch", async (req, res) => {
         } else {
           // Insert new merchant
           result = await pool.query(
-            "INSERT INTO merchants (name, created_at) VALUES ($1, CURRENT_TIMESTAMP) RETURNING *",
-            [merchant.name]
+            "INSERT INTO merchants (mid, name, created_at) VALUES ($1, $2, CURRENT_TIMESTAMP) RETURNING *",
+            [merchant.mid || 1, merchant.name]
           );
           console.log("Inserted new merchant with ID:", result.rows[0].id);
         }
@@ -498,8 +494,7 @@ server.post("/sync/production", async (req, res) => {
     try {
       productionData = JSON.parse(data);
     } catch (err) {
-      console.error("Failed to parse production data:", err);
-      return res.status(400).json({ error: "Invalid production data format" });
+      productionData = data;
     }
     
     // Check if a production record with this date already exists
@@ -519,8 +514,8 @@ server.post("/sync/production", async (req, res) => {
     } else {
       // Insert new production record
       result = await pool.query(
-        "INSERT INTO production (date, data, created_at) VALUES ($1, $2, CURRENT_TIMESTAMP) RETURNING *",
-        [productionData.date, productionData]
+        "INSERT INTO production (mid, date, data, created_at) VALUES ($1, $2, $3, CURRENT_TIMESTAMP) RETURNING *",
+        [productionData.mid || 1, productionData.date, productionData]
       );
       console.log("Inserted new production record with date:", productionData.date);
     }
