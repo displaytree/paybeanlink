@@ -18,58 +18,66 @@ async function initDatabase() {
     // Create merchants table if it doesn't exist
     await pool.query(`
       CREATE TABLE IF NOT EXISTS merchants (
-        id SERIAL PRIMARY KEY,
-        mid INTEGER DEFAULT 1,
-        name TEXT NOT NULL UNIQUE,
+        id INTEGER NOT NULL,
+        mid INTEGER DEFAULT 1 NOT NULL,
+        name TEXT NOT NULL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        PRIMARY KEY (id, mid),
+        UNIQUE (name, mid)
       )
     `);
     
     // Create bills table if it doesn't exist
     await pool.query(`
       CREATE TABLE IF NOT EXISTS bills (
-        id SERIAL PRIMARY KEY,
-        mid INTEGER DEFAULT 1,
+        id INTEGER NOT NULL,
+        mid INTEGER DEFAULT 1 NOT NULL,
         data JSONB NOT NULL,
-        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        PRIMARY KEY (id, mid)
       )
     `);
     
     // Create inventory table if it doesn't exist
     await pool.query(`
       CREATE TABLE IF NOT EXISTS inventory (
-        id SERIAL PRIMARY KEY,
-        mid INTEGER DEFAULT 1,
+        id INTEGER NOT NULL,
+        mid INTEGER DEFAULT 1 NOT NULL,
         merchant_name TEXT NOT NULL,
         date TEXT NOT NULL,
         data JSONB NOT NULL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        UNIQUE(merchant_name, date)
+        PRIMARY KEY (id, mid),
+        UNIQUE(merchant_name, date, mid)
       )
     `);
     
     // Create supply table if it doesn't exist
     await pool.query(`
       CREATE TABLE IF NOT EXISTS supply (
-        id SERIAL PRIMARY KEY,
-        mid INTEGER DEFAULT 1,
-        name TEXT NOT NULL UNIQUE,
+        id INTEGER NOT NULL,
+        mid INTEGER DEFAULT 1 NOT NULL,
+        name TEXT NOT NULL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        PRIMARY KEY (id, mid),
+        UNIQUE (name, mid)
       )
     `);
     
     // Create production table if it doesn't exist
     await pool.query(`
       CREATE TABLE IF NOT EXISTS production (
-        id SERIAL PRIMARY KEY,
-        mid INTEGER DEFAULT 1,
-        date TEXT NOT NULL UNIQUE,
+        id INTEGER NOT NULL,
+        mid INTEGER DEFAULT 1 NOT NULL,
+        date TEXT NOT NULL,
         data JSONB NOT NULL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        PRIMARY KEY (id, mid),
+        UNIQUE(date, mid)
       )
     `);
     
@@ -107,27 +115,31 @@ server.post("/sync/bills", async (req, res) => {
       billData = data;
     }
     
-    // Check if a bill with this bill number already exists
+    // Make sure we have an ID and merchant ID
+    const billId = billData.id || parseInt(billData.billNumber) || Math.floor(Date.now() / 1000);
+    const merchantId = billData.mid || 1;
+    
+    // Check if a bill with this bill number and merchant id already exists
     const existingBillResult = await pool.query(
-      "SELECT id FROM bills WHERE data->>'billNumber' = $1",
-      [billData.billNumber]
+      "SELECT id, mid FROM bills WHERE id = $1 AND mid = $2",
+      [billId, merchantId]
     );
     
     let result;
     if (existingBillResult.rows.length > 0) {
       // Update existing bill
       result = await pool.query(
-        "UPDATE bills SET data = $1, created_at = CURRENT_TIMESTAMP WHERE id = $2 RETURNING *",
-        [data, existingBillResult.rows[0].id]
+        "UPDATE bills SET data = $1, created_at = CURRENT_TIMESTAMP WHERE id = $2 AND mid = $3 RETURNING *",
+        [data, billId, merchantId]
       );
-      console.log("Updated bill with ID:", existingBillResult.rows[0].id);
+      console.log("Updated bill with ID:", billId, "and MID:", merchantId);
     } else {
       // Insert new bill
       result = await pool.query(
-        "INSERT INTO bills (mid, data) VALUES ($1, $2) RETURNING *",
-        [billData.mid || 1, data]
+        "INSERT INTO bills (id, mid, data) VALUES ($1, $2, $3) RETURNING *",
+        [billId, merchantId, data]
       );
-      console.log("Inserted new bill with ID:", result.rows[0].id);
+      console.log("Inserted new bill with ID:", billId, "and MID:", merchantId);
     }
     
     res.json(result.rows[0]);
@@ -159,27 +171,31 @@ server.post("/sync/inventory", async (req, res) => {
       inventoryData = data;
     }
     
-    // Check if inventory with this merchant_name and date already exists
+    // Make sure we have an ID and merchant ID
+    const inventoryId = inventoryData.id || Math.floor(Date.now() / 1000);
+    const merchantId = inventoryData.mid || 1;
+    
+    // Check if inventory with this merchant_name, date, and mid already exists
     const existingInventoryResult = await pool.query(
-      "SELECT id FROM inventory WHERE merchant_name = $1 AND date = $2",
-      [inventoryData.merchantName, inventoryData.date]
+      "SELECT id, mid FROM inventory WHERE merchant_name = $1 AND date = $2 AND mid = $3",
+      [inventoryData.merchantName, inventoryData.date, merchantId]
     );
     
     let result;
     if (existingInventoryResult.rows.length > 0) {
       // Update existing inventory
       result = await pool.query(
-        "UPDATE inventory SET data = $1, updated_at = CURRENT_TIMESTAMP WHERE id = $2 RETURNING *",
-        [JSON.stringify(inventoryData.rows), existingInventoryResult.rows[0].id]
+        "UPDATE inventory SET data = $1, updated_at = CURRENT_TIMESTAMP WHERE id = $2 AND mid = $3 RETURNING *",
+        [JSON.stringify(inventoryData.rows), existingInventoryResult.rows[0].id, merchantId]
       );
-      console.log("Updated inventory with ID:", existingInventoryResult.rows[0].id);
+      console.log("Updated inventory with ID:", existingInventoryResult.rows[0].id, "and MID:", merchantId);
     } else {
       // Insert new inventory
       result = await pool.query(
-        "INSERT INTO inventory (mid, merchant_name, date, data, created_at) VALUES ($1, $2, $3, $4, CURRENT_TIMESTAMP) RETURNING *",
-        [inventoryData.mid || 1, inventoryData.merchantName, inventoryData.date, JSON.stringify(inventoryData.rows)]
+        "INSERT INTO inventory (id, mid, merchant_name, date, data, created_at) VALUES ($1, $2, $3, $4, $5, CURRENT_TIMESTAMP) RETURNING *",
+        [inventoryId, merchantId, inventoryData.merchantName, inventoryData.date, JSON.stringify(inventoryData.rows)]
       );
-      console.log("Inserted new inventory with ID:", result.rows[0].id);
+      console.log("Inserted new inventory with ID:", inventoryId, "and MID:", merchantId);
     }
     
     res.json(result.rows[0]);
@@ -212,27 +228,31 @@ server.post("/sync/inventories", async (req, res) => {
     // Process each inventory record
     for (const inventory of inventoriesArray) {
       try {
-        // Check if inventory with this merchant_name and date already exists
+        // Make sure we have an ID and merchant ID
+        const inventoryId = inventory.id || Math.floor(Date.now() / 1000);
+        const merchantId = inventory.mid || 1;
+        
+        // Check if inventory with this merchant_name, date, and mid already exists
         const existingInventoryResult = await pool.query(
-          "SELECT id FROM inventory WHERE merchant_name = $1 AND date = $2",
-          [inventory.merchantName, inventory.date]
+          "SELECT id, mid FROM inventory WHERE merchant_name = $1 AND date = $2 AND mid = $3",
+          [inventory.merchantName, inventory.date, merchantId]
         );
         
         let result;
         if (existingInventoryResult.rows.length > 0) {
           // Update existing inventory
           result = await pool.query(
-            "UPDATE inventory SET data = $1, updated_at = CURRENT_TIMESTAMP WHERE id = $2 RETURNING *",
-            [JSON.stringify(inventory.rows), existingInventoryResult.rows[0].id]
+            "UPDATE inventory SET data = $1, updated_at = CURRENT_TIMESTAMP WHERE id = $2 AND mid = $3 RETURNING *",
+            [JSON.stringify(inventory.rows), existingInventoryResult.rows[0].id, merchantId]
           );
-          console.log("Updated inventory with ID:", existingInventoryResult.rows[0].id);
+          console.log("Updated inventory with ID:", existingInventoryResult.rows[0].id, "and MID:", merchantId);
         } else {
           // Insert new inventory
           result = await pool.query(
-            "INSERT INTO inventory (mid, merchant_name, date, data, created_at) VALUES ($1, $2, $3, $4, CURRENT_TIMESTAMP) RETURNING *",
-            [inventory.merchantName, inventory.date, JSON.stringify(inventory.rows)]
+            "INSERT INTO inventory (id, mid, merchant_name, date, data, created_at) VALUES ($1, $2, $3, $4, $5, CURRENT_TIMESTAMP) RETURNING *",
+            [inventoryId, merchantId, inventory.merchantName, inventory.date, JSON.stringify(inventory.rows)]
           );
-          console.log("Inserted new inventory with ID:", result.rows[0].id);
+          console.log("Inserted new inventory with ID:", inventoryId, "and MID:", merchantId);
         }
         
         results.push(result.rows[0]);
@@ -272,11 +292,32 @@ server.get("/sync/supply", async (req, res) => {
 
 server.post("/sync/supply", async (req, res) => {
   try {
-    const { name, mid } = req.body;
-    const result = await pool.query(
-      "INSERT INTO supply (mid, name) VALUES ($1, $2) RETURNING *",
-      [mid || 1, name]
+    const { name, mid = 1 } = req.body;
+    const supplyId = Math.floor(Date.now() / 1000);
+
+    // Check if supply with this name and mid already exists
+    const existingSupplyResult = await pool.query(
+      "SELECT id, mid FROM supply WHERE name = $1 AND mid = $2",
+      [name, mid]
     );
+    
+    let result;
+    if (existingSupplyResult.rows.length > 0) {
+      // Update existing supply
+      result = await pool.query(
+        "UPDATE supply SET updated_at = CURRENT_TIMESTAMP WHERE id = $1 AND mid = $2 RETURNING *",
+        [existingSupplyResult.rows[0].id, mid]
+      );
+      console.log("Updated supply with ID:", existingSupplyResult.rows[0].id, "and MID:", mid);
+    } else {
+      // Insert new supply
+      result = await pool.query(
+        "INSERT INTO supply (id, mid, name, created_at) VALUES ($1, $2, $3, CURRENT_TIMESTAMP) RETURNING *",
+        [supplyId, mid, name]
+      );
+      console.log("Inserted new supply with ID:", supplyId, "and MID:", mid);
+    }
+    
     res.json(result.rows[0]);
   } catch (err) {
     console.error(err);
@@ -306,27 +347,30 @@ server.post("/sync/supplies", async (req, res) => {
     // Process each supply item
     for (const supply of suppliesArray) {
       try {
-        // Check if supply with this name already exists
+        const supplyId = supply.id || Math.floor(Date.now() / 1000);
+        const mid = supply.mid || 1;
+        
+        // Check if supply with this name and mid already exists
         const existingSupplyResult = await pool.query(
-          "SELECT id FROM supply WHERE name = $1",
-          [supply.name]
+          "SELECT id, mid FROM supply WHERE name = $1 AND mid = $2",
+          [supply.name, mid]
         );
         
         let result;
         if (existingSupplyResult.rows.length > 0) {
-          // Supply already exists, skip insertion
+          // Update existing supply
           result = await pool.query(
-            "SELECT * FROM supply WHERE id = $1",
-            [existingSupplyResult.rows[0].id]
+            "UPDATE supply SET updated_at = CURRENT_TIMESTAMP WHERE id = $1 AND mid = $2 RETURNING *",
+            [existingSupplyResult.rows[0].id, mid]
           );
-          console.log("Supply already exists with ID:", existingSupplyResult.rows[0].id);
+          console.log("Updated supply with ID:", existingSupplyResult.rows[0].id, "and MID:", mid);
         } else {
           // Insert new supply
           result = await pool.query(
-            "INSERT INTO supply (name, created_at) VALUES ($1, CURRENT_TIMESTAMP) RETURNING *",
-            [supply.name]
+            "INSERT INTO supply (id, mid, name, created_at) VALUES ($1, $2, $3, CURRENT_TIMESTAMP) RETURNING *",
+            [supplyId, mid, supply.name]
           );
-          console.log("Inserted new supply with ID:", result.rows[0].id);
+          console.log("Inserted new supply with ID:", supplyId, "and MID:", mid);
         }
         
         results.push(result.rows[0]);
@@ -374,27 +418,31 @@ server.post("/sync/merchants", async (req, res) => {
       merchantData = data;
     }
     
-    // Check if merchant with this name already exists
+    // Make sure we have an ID and merchant ID
+    const merchantId = merchantData.id || Math.floor(Date.now() / 1000);
+    const mid = merchantData.mid || 1;
+    
+    // Check if merchant with this name and mid already exists
     const existingMerchantResult = await pool.query(
-      "SELECT id FROM merchants WHERE name = $1",
-      [merchantData.name]
+      "SELECT id, mid FROM merchants WHERE name = $1 AND mid = $2",
+      [merchantData.name, mid]
     );
     
     let result;
     if (existingMerchantResult.rows.length > 0) {
       // Update existing merchant
       result = await pool.query(
-        "UPDATE merchants SET updated_at = CURRENT_TIMESTAMP WHERE id = $1 RETURNING *",
-        [existingMerchantResult.rows[0].id]
+        "UPDATE merchants SET updated_at = CURRENT_TIMESTAMP WHERE id = $1 AND mid = $2 RETURNING *",
+        [existingMerchantResult.rows[0].id, mid]
       );
-      console.log("Updated merchant with ID:", existingMerchantResult.rows[0].id);
+      console.log("Updated merchant with ID:", existingMerchantResult.rows[0].id, "and MID:", mid);
     } else {
       // Insert new merchant
       result = await pool.query(
-        "INSERT INTO merchants (mid, name, created_at) VALUES ($1, $2, CURRENT_TIMESTAMP) RETURNING *",
-        [merchantData.mid || 1, merchantData.name]
+        "INSERT INTO merchants (id, mid, name, created_at) VALUES ($1, $2, $3, CURRENT_TIMESTAMP) RETURNING *",
+        [merchantId, mid, merchantData.name]
       );
-      console.log("Inserted new merchant with ID:", result.rows[0].id);
+      console.log("Inserted new merchant with ID:", merchantId, "and MID:", mid);
     }
     
     res.json(result.rows[0]);
@@ -427,27 +475,31 @@ server.post("/sync/merchants/batch", async (req, res) => {
     // Process each merchant
     for (const merchant of merchantsArray) {
       try {
-        // Check if merchant with this name already exists
+        // Make sure we have an ID and merchant ID
+        const merchantId = merchant.id || Math.floor(Date.now() / 1000);
+        const mid = merchant.mid || 1;
+        
+        // Check if merchant with this name and mid already exists
         const existingMerchantResult = await pool.query(
-          "SELECT id FROM merchants WHERE name = $1",
-          [merchant.name]
+          "SELECT id, mid FROM merchants WHERE name = $1 AND mid = $2",
+          [merchant.name, mid]
         );
         
         let result;
         if (existingMerchantResult.rows.length > 0) {
           // Update existing merchant
           result = await pool.query(
-            "UPDATE merchants SET updated_at = CURRENT_TIMESTAMP WHERE id = $1 RETURNING *",
-            [existingMerchantResult.rows[0].id]
+            "UPDATE merchants SET updated_at = CURRENT_TIMESTAMP WHERE id = $1 AND mid = $2 RETURNING *",
+            [existingMerchantResult.rows[0].id, mid]
           );
-          console.log("Updated merchant with ID:", existingMerchantResult.rows[0].id);
+          console.log("Updated merchant with ID:", existingMerchantResult.rows[0].id, "and MID:", mid);
         } else {
           // Insert new merchant
           result = await pool.query(
-            "INSERT INTO merchants (mid, name, created_at) VALUES ($1, $2, CURRENT_TIMESTAMP) RETURNING *",
-            [merchant.mid || 1, merchant.name]
+            "INSERT INTO merchants (id, mid, name, created_at) VALUES ($1, $2, $3, CURRENT_TIMESTAMP) RETURNING *",
+            [merchantId, mid, merchant.name]
           );
-          console.log("Inserted new merchant with ID:", result.rows[0].id);
+          console.log("Inserted new merchant with ID:", merchantId, "and MID:", mid);
         }
         
         results.push(result.rows[0]);
@@ -496,28 +548,32 @@ server.post("/sync/production", async (req, res) => {
     } catch (err) {
       productionData = data;
     }
+
+    // Make sure we have an ID and merchant ID
+    const productionId = productionData.id || Math.floor(Date.now() / 1000);
+    const merchantId = productionData.mid || 1;
     
-    // Check if a production record with this date already exists
+    // Check if a production record with this date and mid already exists
     const existingResult = await pool.query(
-      "SELECT id FROM production WHERE date = $1",
-      [productionData.date]
+      "SELECT id, mid FROM production WHERE date = $1 AND mid = $2",
+      [productionData.date, merchantId]
     );
     
     let result;
     if (existingResult.rows.length > 0) {
       // Update existing production record
       result = await pool.query(
-        "UPDATE production SET data = $1, updated_at = CURRENT_TIMESTAMP WHERE date = $2 RETURNING *",
-        [productionData, productionData.date]
+        "UPDATE production SET data = $1, updated_at = CURRENT_TIMESTAMP WHERE id = $2 AND mid = $3 RETURNING *",
+        [productionData, existingResult.rows[0].id, merchantId]
       );
-      console.log("Updated production record with date:", productionData.date);
+      console.log("Updated production record with ID:", existingResult.rows[0].id, "and MID:", merchantId);
     } else {
       // Insert new production record
       result = await pool.query(
-        "INSERT INTO production (mid, date, data, created_at) VALUES ($1, $2, $3, CURRENT_TIMESTAMP) RETURNING *",
-        [productionData.mid || 1, productionData.date, productionData]
+        "INSERT INTO production (id, mid, date, data, created_at) VALUES ($1, $2, $3, $4, CURRENT_TIMESTAMP) RETURNING *",
+        [productionId, merchantId, productionData.date, productionData]
       );
-      console.log("Inserted new production record with date:", productionData.date);
+      console.log("Inserted new production record with ID:", productionId, "and MID:", merchantId);
     }
     
     res.json({ success: true, data: result.rows[0] });
