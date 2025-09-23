@@ -98,10 +98,10 @@ async function initDatabase() {
       )
     `);
     
-    // Create register table if it doesn't exist with updated schema (removed merchantId)
+    // Create register table if it doesn't exist with updated schema and serial ID
     await pool.query(`
       CREATE TABLE IF NOT EXISTS register (
-        id INTEGER PRIMARY KEY,
+        id SERIAL PRIMARY KEY,
         merchantName TEXT,
         hostName TEXT NOT NULL,
         registeredDate TEXT NOT NULL,
@@ -792,7 +792,7 @@ server.get("/sync/register", async (req, res) => {
   }
 });
 
-// Modified register endpoint to return ID and handle new hostnames
+// Modified register endpoint to use sequential IDs from the database
 server.post("/sync/register", async (req, res) => {
   try {
     const { data } = req.body;
@@ -804,9 +804,6 @@ server.post("/sync/register", async (req, res) => {
     } catch (err) {
       registerData = data;
     }
-
-    // Generate an ID if not provided
-    const registerId = registerData.id || Math.floor(Date.now() / 1000);
     
     // Check if a registration with this hostname already exists
     const existingResult = await pool.query(
@@ -845,8 +842,6 @@ server.post("/sync/register", async (req, res) => {
       );
       console.log("Updated registration with ID:", existingResult.rows[0].id);
 
-      
-
       // Return the existing ID with success status
       return res.json({ 
         success: true, 
@@ -855,16 +850,15 @@ server.post("/sync/register", async (req, res) => {
         data: result.rows[0]
       });
     } else {
-      // Insert new registration with the new hostname
+      // Insert new registration and let PostgreSQL generate sequential ID
       result = await pool.query(
         `INSERT INTO register (
-          id, merchantName, hostName, registeredDate,
+          merchantName, hostName, registeredDate,
           phoneNumber, email, locationAddress, locationCity,
           locationState, locationCountry, locationZipCode, registered, created_at
-        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, CURRENT_TIMESTAMP) 
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, CURRENT_TIMESTAMP) 
         RETURNING id, hostName, merchantName, registered, created_at`,
         [
-          registerId,
           registerData.merchantName,
           registerData.hostName,
           registerData.registeredDate,
@@ -878,12 +872,14 @@ server.post("/sync/register", async (req, res) => {
           registerData.registered
         ]
       );
-      console.log("Inserted new registration with ID:", registerId);
       
-      // Return the new ID with success status
+      const newId = result.rows[0].id;
+      console.log("Inserted new registration with auto-generated ID:", newId);
+      
+      // Return the new sequential ID with success status
       return res.json({ 
         success: true, 
-        id: registerId,
+        id: newId,
         isNew: true,
         data: result.rows[0]
       });
