@@ -81,6 +81,44 @@ async function initDatabase() {
       )
     `);
     
+    // Create products table if it doesn't exist
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS products (
+        id INTEGER NOT NULL,
+        mid INTEGER DEFAULT 1 NOT NULL,
+        name TEXT NOT NULL,
+        price NUMERIC DEFAULT 0,
+        metrics TEXT DEFAULT 'unit',
+        discount NUMERIC DEFAULT 0,
+        date TEXT,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        PRIMARY KEY (id, mid),
+        UNIQUE(name, mid)
+      )
+    `);
+    
+    // Create register table if it doesn't exist with updated schema (removed merchantId)
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS register (
+        id INTEGER PRIMARY KEY,
+        merchantName TEXT,
+        hostName TEXT NOT NULL,
+        registeredDate TEXT NOT NULL,
+        phoneNumber TEXT,
+        email TEXT,
+        locationAddress TEXT,
+        locationCity TEXT,
+        locationState TEXT,
+        locationCountry TEXT,
+        locationZipCode TEXT,
+        registered BOOLEAN DEFAULT FALSE,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        UNIQUE(hostName)
+      )
+    `);
+    
     console.log('Database tables initialized successfully');
   } catch (err) {
     console.error('Error initializing database tables:', err);
@@ -580,6 +618,284 @@ server.post("/sync/production", async (req, res) => {
   } catch (err) {
     console.error("Error in production sync:", err);
     res.status(500).json({ error: "Database error", message: err.message });
+  }
+});
+
+// Products data endpoints
+server.get("/sync/products", async (req, res) => {
+  try {
+    const result = await pool.query("SELECT * FROM products ORDER BY name");
+    res.json(result.rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Database error" });
+  }
+});
+
+server.post("/sync/products", async (req, res) => {
+  try {
+    const { data } = req.body;
+    
+    // Parse the product data
+    let productData;
+    try {
+      productData = JSON.parse(data);
+    } catch (err) {
+      productData = data;
+    }
+
+    // Make sure we have an ID and merchant ID
+    const productId = productData.id || Math.floor(Date.now() / 1000);
+    const merchantId = productData.mid || 1;
+    
+    // Check if a product with this name and mid already exists
+    const existingResult = await pool.query(
+      "SELECT id, mid FROM products WHERE name = $1 AND mid = $2",
+      [productData.name, merchantId]
+    );
+    
+    let result;
+    if (existingResult.rows.length > 0) {
+      // Update existing product
+      result = await pool.query(
+        "UPDATE products SET price = $1, metrics = $2, discount = $3, date = $4, updated_at = CURRENT_TIMESTAMP WHERE id = $5 AND mid = $6 RETURNING *",
+        [
+          productData.price || 0,
+          productData.metrics || 'unit',
+          productData.discount || 0,
+          productData.date,
+          existingResult.rows[0].id,
+          merchantId
+        ]
+      );
+      console.log("Updated product with ID:", existingResult.rows[0].id, "and MID:", merchantId);
+    } else {
+      // Insert new product
+      result = await pool.query(
+        "INSERT INTO products (id, mid, name, price, metrics, discount, date, created_at) VALUES ($1, $2, $3, $4, $5, $6, $7, CURRENT_TIMESTAMP) RETURNING *",
+        [
+          productId,
+          merchantId,
+          productData.name,
+          productData.price || 0,
+          productData.metrics || 'unit',
+          productData.discount || 0,
+          productData.date
+        ]
+      );
+      console.log("Inserted new product with ID:", productId, "and MID:", merchantId);
+    }
+    
+    res.json(result.rows[0]);
+  } catch (err) {
+    console.error("Error syncing product:", err.message);
+    console.error("Error details:", err);
+    res.status(500).json({ error: "Database error", message: err.message });
+  }
+});
+
+// Sync multiple products in batch
+server.post("/sync/products/batch", async (req, res) => {
+  try {
+    const { data } = req.body;
+    let productsArray;
+    
+    try {
+      productsArray = JSON.parse(data);
+      if (!Array.isArray(productsArray)) {
+        productsArray = [productsArray];
+      }
+    } catch (err) {
+      // If data is already an object/array, use it directly
+      productsArray = Array.isArray(data) ? data : [data];
+    }
+    
+    const results = [];
+    const errors = [];
+    
+    // Process each product
+    for (const product of productsArray) {
+      try {
+        const productId = product.id || Math.floor(Date.now() / 1000);
+        const mid = product.mid || 1;
+        
+        // Check if product with this name and mid already exists
+        const existingProductResult = await pool.query(
+          "SELECT id, mid FROM products WHERE name = $1 AND mid = $2",
+          [product.name, mid]
+        );
+        
+        let result;
+        if (existingProductResult.rows.length > 0) {
+          // Update existing product
+          result = await pool.query(
+            "UPDATE products SET price = $1, metrics = $2, discount = $3, date = $4, updated_at = CURRENT_TIMESTAMP WHERE id = $5 AND mid = $6 RETURNING *",
+            [
+              product.price || 0,
+              product.metrics || 'unit',
+              product.discount || 0,
+              product.date,
+              existingProductResult.rows[0].id,
+              mid
+            ]
+          );
+          console.log("Updated product with ID:", existingProductResult.rows[0].id, "and MID:", mid);
+        } else {
+          // Insert new product
+          result = await pool.query(
+            "INSERT INTO products (id, mid, name, price, metrics, discount, date, created_at) VALUES ($1, $2, $3, $4, $5, $6, $7, CURRENT_TIMESTAMP) RETURNING *",
+            [
+              productId,
+              mid,
+              product.name,
+              product.price || 0,
+              product.metrics || 'unit',
+              product.discount || 0,
+              product.date
+            ]
+          );
+          console.log("Inserted new product with ID:", productId, "and MID:", mid);
+        }
+        
+        results.push(result.rows[0]);
+      } catch (err) {
+        console.error(`Error processing product ${product.name}:`, err.message);
+        errors.push({
+          product: product.name,
+          error: err.message
+        });
+      }
+    }
+    
+    res.json({
+      success: errors.length === 0,
+      processed: results.length,
+      failed: errors.length,
+      results,
+      errors
+    });
+  } catch (err) {
+    console.error("Error in batch product sync:", err.message);
+    console.error("Error details:", err);
+    res.status(500).json({ error: "Database error", message: err.message });
+  }
+});
+
+// Add register data endpoints
+server.get("/sync/register", async (req, res) => {
+  try {
+    const result = await pool.query("SELECT * FROM register ORDER BY updated_at DESC");
+    res.json(result.rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Database error" });
+  }
+});
+
+// Modified register endpoint to return ID and handle new hostnames
+server.post("/sync/register", async (req, res) => {
+  try {
+    const { data } = req.body;
+    
+    // Parse the registration data
+    let registerData;
+    try {
+      registerData = JSON.parse(data);
+    } catch (err) {
+      registerData = data;
+    }
+
+    // Generate an ID if not provided
+    const registerId = registerData.id || Math.floor(Date.now() / 1000);
+    
+    // Check if a registration with this hostname already exists
+    const existingResult = await pool.query(
+      "SELECT id FROM register WHERE hostName = $1",
+      [registerData.hostName]
+    );
+    
+    let result;
+    if (existingResult.rows.length > 0) {
+      // Update existing registration
+      result = await pool.query(
+        `UPDATE register SET 
+          merchantName = $1, 
+          phoneNumber = $2, 
+          email = $3, 
+          locationAddress = $4, 
+          locationCity = $5, 
+          locationState = $6, 
+          locationCountry = $7, 
+          locationZipCode = $8, 
+          registered = $9, 
+          updated_at = CURRENT_TIMESTAMP 
+        WHERE id = $10 RETURNING id, hostName, merchantName, registered, updated_at`,
+        [
+          registerData.merchantName,
+          registerData.phoneNumber,
+          registerData.email,
+          registerData.location?.address,
+          registerData.location?.city,
+          registerData.location?.state,
+          registerData.location?.country,
+          registerData.location?.zipCode,
+          registerData.registered,
+          existingResult.rows[0].id
+        ]
+      );
+      console.log("Updated registration with ID:", existingResult.rows[0].id);
+
+      
+
+      // Return the existing ID with success status
+      return res.json({ 
+        success: true, 
+        id: existingResult.rows[0].id,
+        isNew: false,
+        data: result.rows[0]
+      });
+    } else {
+      // Insert new registration with the new hostname
+      result = await pool.query(
+        `INSERT INTO register (
+          id, merchantName, hostName, registeredDate,
+          phoneNumber, email, locationAddress, locationCity,
+          locationState, locationCountry, locationZipCode, registered, created_at
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, CURRENT_TIMESTAMP) 
+        RETURNING id, hostName, merchantName, registered, created_at`,
+        [
+          registerId,
+          registerData.merchantName,
+          registerData.hostName,
+          registerData.registeredDate,
+          registerData.phoneNumber,
+          registerData.email,
+          registerData.location?.address,
+          registerData.location?.city,
+          registerData.location?.state,
+          registerData.location?.country,
+          registerData.location?.zipCode,
+          registerData.registered
+        ]
+      );
+      console.log("Inserted new registration with ID:", registerId);
+      
+      // Return the new ID with success status
+      return res.json({ 
+        success: true, 
+        id: registerId,
+        isNew: true,
+        data: result.rows[0]
+      });
+    }
+  } catch (err) {
+    console.error("Error saving registration data:", err.message);
+    console.error("Error details:", err);
+    res.status(500).json({ 
+      success: false, 
+      error: "Database error", 
+      message: err.message 
+    });
   }
 });
 
