@@ -895,6 +895,42 @@ server.post("/sync/register", async (req, res) => {
   }
 });
 
+// Add a new endpoint to get register data by hostname
+server.get("/sync/register/:hostname", async (req, res) => {
+  try {
+    const hostname = req.params.hostname;
+    
+    if (!hostname) {
+      return res.status(400).json({ error: "Hostname parameter is required" });
+    }
+    
+    const result = await pool.query(
+      "SELECT * FROM register WHERE hostName = $1",
+      [hostname]
+    );
+    
+    if (result.rows.length === 0) {
+      return res.status(404).json({ 
+        success: false, 
+        error: "Registration not found for this hostname" 
+      });
+    }
+    
+    // Return the registration data
+    res.json({ 
+      success: true, 
+      data: result.rows[0] 
+    });
+  } catch (err) {
+    console.error("Error fetching registration by hostname:", err);
+    res.status(500).json({ 
+      success: false, 
+      error: "Database error", 
+      message: err.message 
+    });
+  }
+});
+
 // 🔹 Mount json-server router last
 server.use(router);
 
