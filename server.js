@@ -119,6 +119,21 @@ async function initDatabase() {
       )
     `);
     
+    // Create bill_of_material table if it doesn't exist
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS bill_of_material (
+        id INTEGER NOT NULL,
+        mid INTEGER DEFAULT 1 NOT NULL,
+        name TEXT NOT NULL,
+        date TEXT NOT NULL,
+        data JSONB NOT NULL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        PRIMARY KEY (id, mid),
+        UNIQUE(name, mid)
+      )
+    `);
+    
     console.log('Database tables initialized successfully');
   } catch (err) {
     console.error('Error initializing database tables:', err);
@@ -928,6 +943,158 @@ server.get("/sync/register/:hostname", async (req, res) => {
       error: "Database error", 
       message: err.message 
     });
+  }
+});
+
+// Bill of Material data endpoints
+server.get("/sync/bom", async (req, res) => {
+  try {
+    const result = await pool.query("SELECT * FROM bill_of_material ORDER BY name");
+    res.json(result.rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Database error" });
+  }
+});
+
+server.post("/sync/bom", async (req, res) => {
+  try {
+    const { data } = req.body;
+    
+    // Parse the BOM data
+    let bomData;
+    try {
+      bomData = JSON.parse(data);
+    } catch (err) {
+      bomData = data;
+    }
+
+    // Make sure we have an ID and merchant ID
+    const bomId = bomData.id || Math.floor(Date.now() / 1000);
+    const merchantId = bomData.mid || 1;
+    
+    // Check if a BOM with this name and mid already exists
+    const existingResult = await pool.query(
+      "SELECT id, mid FROM bill_of_material WHERE name = $1 AND mid = $2",
+      [bomData.name, merchantId]
+    );
+    
+    let result;
+    if (existingResult.rows.length > 0) {
+      // Update existing BOM
+      result = await pool.query(
+        "UPDATE bill_of_material SET data = $1, date = $2, updated_at = CURRENT_TIMESTAMP WHERE id = $3 AND mid = $4 RETURNING *",
+        [
+          bomData.data, // This should be the items array
+          bomData.date,
+          existingResult.rows[0].id,
+          merchantId
+        ]
+      );
+      console.log("Updated BOM with ID:", existingResult.rows[0].id, "and MID:", merchantId);
+    } else {
+      // Insert new BOM
+      result = await pool.query(
+        "INSERT INTO bill_of_material (id, mid, name, date, data, created_at) VALUES ($1, $2, $3, $4, $5, CURRENT_TIMESTAMP) RETURNING *",
+        [
+          bomId,
+          merchantId,
+          bomData.name,
+          bomData.date,
+          bomData.data // This should be the items array
+        ]
+      );
+      console.log("Inserted new BOM with ID:", bomId, "and MID:", merchantId);
+    }
+    
+    res.json({ success: true, data: result.rows[0] });
+  } catch (err) {
+    console.error("Error syncing BOM:", err.message);
+    console.error("Error details:", err);
+    res.status(500).json({ error: "Database error", message: err.message });
+  }
+});
+
+// Sync multiple BOMs in batch
+server.post("/sync/bom/batch", async (req, res) => {
+  try {
+    const { data } = req.body;
+    let bomsArray;
+    
+    try {
+      bomsArray = JSON.parse(data);
+      if (!Array.isArray(bomsArray)) {
+        bomsArray = [bomsArray];
+      }
+    } catch (err) {
+      // If data is already an object/array, use it directly
+      bomsArray = Array.isArray(data) ? data : [data];
+    }
+    
+    const results = [];
+    const errors = [];
+    
+    // Process each BOM
+    for (const bom of bomsArray) {
+      try {
+        const bomId = bom.id || Math.floor(Date.now() / 1000);
+        const mid = bom.mid || 1;
+        
+        // Check if BOM with this name and mid already exists
+        const existingBomResult = await pool.query(
+          "SELECT id, mid FROM bill_of_material WHERE name = $1 AND mid = $2",
+          [bom.name, mid]
+        );
+        
+        let result;
+        if (existingBomResult.rows.length > 0) {
+          // Update existing BOM
+          result = await pool.query(
+            "UPDATE bill_of_material SET data = $1, date = $2, updated_at = CURRENT_TIMESTAMP WHERE id = $3 AND mid = $4 RETURNING *",
+            [
+              bom.data,
+              bom.date,
+              existingBomResult.rows[0].id,
+              mid
+            ]
+          );
+          console.log("Updated BOM with ID:", existingBomResult.rows[0].id, "and MID:", mid);
+        } else {
+          // Insert new BOM
+          result = await pool.query(
+            "INSERT INTO bill_of_material (id, mid, name, date, data, created_at) VALUES ($1, $2, $3, $4, $5, CURRENT_TIMESTAMP) RETURNING *",
+            [
+              bomId,
+              mid,
+              bom.name,
+              bom.date,
+              bom.data
+            ]
+          );
+          console.log("Inserted new BOM with ID:", bomId, "and MID:", mid);
+        }
+        
+        results.push(result.rows[0]);
+      } catch (err) {
+        console.error(`Error processing BOM ${bom.name}:`, err.message);
+        errors.push({
+          bom: bom.name,
+          error: err.message
+        });
+      }
+    }
+    
+    res.json({
+      success: errors.length === 0,
+      processed: results.length,
+      failed: errors.length,
+      results,
+      errors
+    });
+  } catch (err) {
+    console.error("Error in batch BOM sync:", err.message);
+    console.error("Error details:", err);
+    res.status(500).json({ error: "Database error", message: err.message });
   }
 });
 
