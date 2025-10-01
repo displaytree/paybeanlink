@@ -1767,7 +1767,7 @@
       "id": "1",
       "items": [
         {"date": "2025-09-19", "time": "23:59", "code": "SEP-6927-4158-QXZFMBVLK", "renew": true},
-        {"date": "2025-10-01", "time": "23:59", "code": "OCT-9435-2781-RWTZPABCN", "renew": false},
+        {"date": "2025-10-01", "time": "23:59", "code": "OCT-9435-2781-RWTZPABCN", "renew": true},
         {"date": "2025-11-01", "time": "23:59", "code": "NOV-3518-7964-DGLKJHSXY", "renew": false},
         {"date": "2025-12-01", "time": "23:59", "code": "DEC-7832-1546-MNTPQVRWE", "renew": false},
         {"date": "2026-01-01", "time": "23:59", "code": "JAN-4621-8395-KBCFGHZAQ", "renew": false},
