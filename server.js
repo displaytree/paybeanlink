@@ -1106,6 +1106,3 @@ server.use(router);
 server.listen(process.env.PORT || 10000, () => {
   console.log("Server is running with JSON + Express routes");
 });
-server.listen(process.env.PORT || 10000, () => {
-  console.log("Server is running with JSON + Express routes");
-});
