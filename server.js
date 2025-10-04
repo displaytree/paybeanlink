@@ -114,6 +114,7 @@ async function initDatabase() {
         locationZipCode TEXT,
         registered BOOLEAN DEFAULT FALSE,
         gstEnabled BOOLEAN DEFAULT FALSE,
+        merchantId SERIAL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         UNIQUE(hostName)
@@ -823,7 +824,7 @@ server.post("/sync/register", async (req, res) => {
     
     // Check if a registration with this hostname already exists
     const existingResult = await pool.query(
-      "SELECT id FROM register WHERE hostName = $1",
+      "SELECT id, merchantId FROM register WHERE hostName = $1",
       [registerData.hostName]
     );
     
@@ -843,7 +844,7 @@ server.post("/sync/register", async (req, res) => {
           registered = $9,
           gstEnabled = $10,
           updated_at = CURRENT_TIMESTAMP 
-        WHERE id = $11 RETURNING id, hostName, merchantName, registered, gstEnabled, updated_at`,
+        WHERE id = $11 RETURNING id, merchantId, hostName, merchantName, registered, gstEnabled, updated_at`,
         [
           registerData.merchantName,
           registerData.phoneNumber,
@@ -860,10 +861,10 @@ server.post("/sync/register", async (req, res) => {
       );
       console.log("Updated registration with ID:", existingResult.rows[0].id);
 
-      // Return the existing ID with success status
+      // Return the merchantId instead of id with success status
       return res.json({ 
         success: true, 
-        id: existingResult.rows[0].id,
+        merchantId: result.rows[0].merchantid, // Change to merchantId (lowercase due to PostgreSQL)
         isNew: false,
         data: result.rows[0]
       });
@@ -875,7 +876,7 @@ server.post("/sync/register", async (req, res) => {
           phoneNumber, email, locationAddress, locationCity,
           locationState, locationCountry, locationZipCode, registered, gstEnabled, created_at
         ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, CURRENT_TIMESTAMP) 
-        RETURNING id, hostName, merchantName, registered, gstEnabled, created_at`,
+        RETURNING id, merchantId, hostName, merchantName, registered, gstEnabled, created_at`,
         [
           registerData.merchantName,
           registerData.hostName,
@@ -892,13 +893,10 @@ server.post("/sync/register", async (req, res) => {
         ]
       );
       
-      const newId = result.rows[0].id;
-      console.log("Inserted new registration with auto-generated ID:", newId);
-      
-      // Return the new sequential ID with success status
+      // Return the merchantId instead of id with success status
       return res.json({ 
         success: true, 
-        id: newId,
+        merchantId: result.rows[0].merchantid, // Change to merchantId (lowercase due to PostgreSQL)
         isNew: true,
         data: result.rows[0]
       });
@@ -1105,6 +1103,9 @@ server.post("/sync/bom/batch", async (req, res) => {
 // 🔹 Mount json-server router last
 server.use(router);
 
+server.listen(process.env.PORT || 10000, () => {
+  console.log("Server is running with JSON + Express routes");
+});
 server.listen(process.env.PORT || 10000, () => {
   console.log("Server is running with JSON + Express routes");
 });
