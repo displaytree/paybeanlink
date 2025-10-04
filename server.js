@@ -113,6 +113,7 @@ async function initDatabase() {
         locationCountry TEXT,
         locationZipCode TEXT,
         registered BOOLEAN DEFAULT FALSE,
+        gstEnabled BOOLEAN DEFAULT FALSE,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         UNIQUE(hostName)
@@ -839,9 +840,10 @@ server.post("/sync/register", async (req, res) => {
           locationState = $6, 
           locationCountry = $7, 
           locationZipCode = $8, 
-          registered = $9, 
+          registered = $9,
+          gstEnabled = $10,
           updated_at = CURRENT_TIMESTAMP 
-        WHERE id = $10 RETURNING id, hostName, merchantName, registered, updated_at`,
+        WHERE id = $11 RETURNING id, hostName, merchantName, registered, gstEnabled, updated_at`,
         [
           registerData.merchantName,
           registerData.phoneNumber,
@@ -852,6 +854,7 @@ server.post("/sync/register", async (req, res) => {
           registerData.location?.country,
           registerData.location?.zipCode,
           registerData.registered,
+          registerData.gstEnabled || false,
           existingResult.rows[0].id
         ]
       );
@@ -870,9 +873,9 @@ server.post("/sync/register", async (req, res) => {
         `INSERT INTO register (
           merchantName, hostName, registeredDate,
           phoneNumber, email, locationAddress, locationCity,
-          locationState, locationCountry, locationZipCode, registered, created_at
-        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, CURRENT_TIMESTAMP) 
-        RETURNING id, hostName, merchantName, registered, created_at`,
+          locationState, locationCountry, locationZipCode, registered, gstEnabled, created_at
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, CURRENT_TIMESTAMP) 
+        RETURNING id, hostName, merchantName, registered, gstEnabled, created_at`,
         [
           registerData.merchantName,
           registerData.hostName,
@@ -884,7 +887,8 @@ server.post("/sync/register", async (req, res) => {
           registerData.location?.state,
           registerData.location?.country,
           registerData.location?.zipCode,
-          registerData.registered
+          registerData.registered,
+          registerData.gstEnabled || false
         ]
       );
       
