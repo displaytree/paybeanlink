@@ -115,6 +115,7 @@ async function initDatabase() {
         registered BOOLEAN DEFAULT FALSE,
         gstEnabled BOOLEAN DEFAULT FALSE,
         merchantId SERIAL,
+        editPassword TEXT DEFAULT 'paybean',
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         UNIQUE(hostName)
@@ -824,7 +825,7 @@ server.post("/sync/register", async (req, res) => {
     
     // Check if a registration with this hostname already exists
     const existingResult = await pool.query(
-      "SELECT id, merchantId FROM register WHERE hostName = $1",
+      "SELECT id, merchantId, editPassword FROM register WHERE hostName = $1",
       [registerData.hostName]
     );
     
@@ -844,7 +845,7 @@ server.post("/sync/register", async (req, res) => {
           registered = $9,
           gstEnabled = $10,
           updated_at = CURRENT_TIMESTAMP 
-        WHERE id = $11 RETURNING id, merchantId, hostName, merchantName, registered, gstEnabled, updated_at`,
+        WHERE id = $11 RETURNING id, merchantId, hostName, merchantName, registered, gstEnabled, editPassword, updated_at`,
         [
           registerData.merchantName,
           registerData.phoneNumber,
@@ -865,6 +866,7 @@ server.post("/sync/register", async (req, res) => {
       return res.json({ 
         success: true, 
         merchantId: result.rows[0].merchantid, // Change to merchantId (lowercase due to PostgreSQL)
+        editPassword: result.rows[0].editpassword, // Include the editPassword in the response
         isNew: false,
         data: result.rows[0]
       });
@@ -874,9 +876,9 @@ server.post("/sync/register", async (req, res) => {
         `INSERT INTO register (
           merchantName, hostName, registeredDate,
           phoneNumber, email, locationAddress, locationCity,
-          locationState, locationCountry, locationZipCode, registered, gstEnabled, created_at
-        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, CURRENT_TIMESTAMP) 
-        RETURNING id, merchantId, hostName, merchantName, registered, gstEnabled, created_at`,
+          locationState, locationCountry, locationZipCode, registered, gstEnabled, editPassword, created_at
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, CURRENT_TIMESTAMP) 
+        RETURNING id, merchantId, hostName, merchantName, registered, gstEnabled, editPassword, created_at`,
         [
           registerData.merchantName,
           registerData.hostName,
@@ -889,7 +891,8 @@ server.post("/sync/register", async (req, res) => {
           registerData.location?.country,
           registerData.location?.zipCode,
           registerData.registered,
-          registerData.gstEnabled || false
+          registerData.gstEnabled || false,
+          'paybean' // Default edit password
         ]
       );
       
@@ -897,6 +900,7 @@ server.post("/sync/register", async (req, res) => {
       return res.json({ 
         success: true, 
         merchantId: result.rows[0].merchantid, // Change to merchantId (lowercase due to PostgreSQL)
+        editPassword: result.rows[0].editpassword, // Include the editPassword in the response
         isNew: true,
         data: result.rows[0]
       });
@@ -933,7 +937,7 @@ server.get("/sync/register/:hostname", async (req, res) => {
       });
     }
     
-    // Return the registration data
+    // Return the registration data including editPassword
     res.json({ 
       success: true, 
       data: result.rows[0] 
