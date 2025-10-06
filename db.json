@@ -2266,7 +2266,7 @@
   "new": [
     {
       "id": "0",
-      "item": { "products": true, "supply": true, "merchants": true, "expiry": true }
+      "item": { "products": false, "supply": true, "merchants": true, "expiry": true }
     },
     {
       "id": "1",
