@@ -117,6 +117,11 @@ async function initDatabase() {
         gstEnabled BOOLEAN DEFAULT FALSE,
         merchantId SERIAL,
         editPassword TEXT DEFAULT 'paybean',
+        enableBillMenu BOOLEAN DEFAULT TRUE,
+        enableInventoryMenu BOOLEAN DEFAULT TRUE,
+        enableBomMenu BOOLEAN DEFAULT TRUE,
+        enableReportsMenu BOOLEAN DEFAULT TRUE,
+        enableRenewalMenu BOOLEAN DEFAULT TRUE,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         UNIQUE(hostName)
@@ -849,8 +854,15 @@ server.post("/sync/register", async (req, res) => {
           locationZipCode = $8, 
           registered = $9,
           gstEnabled = $10,
+          enableBillMenu = $11,
+          enableInventoryMenu = $12,
+          enableBomMenu = $13,
+          enableReportsMenu = $14,
+          enableRenewalMenu = $15,
           updated_at = CURRENT_TIMESTAMP 
-        WHERE id = $11 RETURNING id, merchantId, hostName, merchantName, registered, gstEnabled, editPassword, updated_at`,
+        WHERE id = $16 RETURNING id, merchantId, hostName, merchantName, registered, gstEnabled, 
+          enableBillMenu, enableInventoryMenu, enableBomMenu, enableReportsMenu, enableRenewalMenu, 
+          editPassword, updated_at`,
         [
           registerData.merchantName,
           registerData.phoneNumber,
@@ -862,6 +874,11 @@ server.post("/sync/register", async (req, res) => {
           registerData.location?.zipCode,
           registerData.registered,
           registerData.gstEnabled || false,
+          registerData.enableBillMenu !== undefined ? registerData.enableBillMenu : true,
+          registerData.enableInventoryMenu !== undefined ? registerData.enableInventoryMenu : true,
+          registerData.enableBomMenu !== undefined ? registerData.enableBomMenu : true,
+          registerData.enableReportsMenu !== undefined ? registerData.enableReportsMenu : true,
+          registerData.enableRenewalMenu !== undefined ? registerData.enableRenewalMenu : true,
           existingResult.rows[0].id
         ]
       );
@@ -881,9 +898,13 @@ server.post("/sync/register", async (req, res) => {
         `INSERT INTO register (
           merchantName, hostName, registeredDate,
           phoneNumber, email, locationAddress, locationCity,
-          locationState, locationCountry, locationZipCode, registered, gstEnabled, editPassword, created_at
-        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, CURRENT_TIMESTAMP) 
-        RETURNING id, merchantId, hostName, merchantName, registered, gstEnabled, editPassword, created_at`,
+          locationState, locationCountry, locationZipCode, registered, gstEnabled, 
+          enableBillMenu, enableInventoryMenu, enableBomMenu, enableReportsMenu, enableRenewalMenu,
+          editPassword, created_at
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, CURRENT_TIMESTAMP) 
+        RETURNING id, merchantId, hostName, merchantName, registered, gstEnabled,
+          enableBillMenu, enableInventoryMenu, enableBomMenu, enableReportsMenu, enableRenewalMenu, 
+          editPassword, created_at`,
         [
           registerData.merchantName,
           registerData.hostName,
@@ -897,6 +918,11 @@ server.post("/sync/register", async (req, res) => {
           registerData.location?.zipCode,
           registerData.registered,
           registerData.gstEnabled || false,
+          registerData.enableBillMenu !== undefined ? registerData.enableBillMenu : true,
+          registerData.enableInventoryMenu !== undefined ? registerData.enableInventoryMenu : true,
+          registerData.enableBomMenu !== undefined ? registerData.enableBomMenu : true,
+          registerData.enableReportsMenu !== undefined ? registerData.enableReportsMenu : true,
+          registerData.enableRenewalMenu !== undefined ? registerData.enableRenewalMenu : true,
           'paybean' // Default edit password
         ]
       );
