@@ -90,6 +90,7 @@ async function initDatabase() {
         price NUMERIC DEFAULT 0,
         metrics TEXT DEFAULT 'unit',
         discount NUMERIC DEFAULT 0,
+        gst NUMERIC DEFAULT 0,
         date TEXT,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -674,13 +675,14 @@ server.post("/sync/products", async (req, res) => {
     
     let result;
     if (existingResult.rows.length > 0) {
-      // Update existing product
+      // Update existing product - now including GST
       result = await pool.query(
-        "UPDATE products SET price = $1, metrics = $2, discount = $3, date = $4, updated_at = CURRENT_TIMESTAMP WHERE id = $5 AND mid = $6 RETURNING *",
+        "UPDATE products SET price = $1, metrics = $2, discount = $3, gst = $4, date = $5, updated_at = CURRENT_TIMESTAMP WHERE id = $6 AND mid = $7 RETURNING *",
         [
           productData.price || 0,
           productData.metrics || 'unit',
           productData.discount || 0,
+          productData.gst || 0, // Add GST field
           productData.date,
           existingResult.rows[0].id,
           merchantId
@@ -688,9 +690,9 @@ server.post("/sync/products", async (req, res) => {
       );
       console.log("Updated product with ID:", existingResult.rows[0].id, "and MID:", merchantId);
     } else {
-      // Insert new product
+      // Insert new product - now including GST
       result = await pool.query(
-        "INSERT INTO products (id, mid, name, price, metrics, discount, date, created_at) VALUES ($1, $2, $3, $4, $5, $6, $7, CURRENT_TIMESTAMP) RETURNING *",
+        "INSERT INTO products (id, mid, name, price, metrics, discount, gst, date, created_at) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, CURRENT_TIMESTAMP) RETURNING *",
         [
           productId,
           merchantId,
@@ -698,6 +700,7 @@ server.post("/sync/products", async (req, res) => {
           productData.price || 0,
           productData.metrics || 'unit',
           productData.discount || 0,
+          productData.gst || 0, // Add GST field
           productData.date
         ]
       );
@@ -712,7 +715,7 @@ server.post("/sync/products", async (req, res) => {
   }
 });
 
-// Sync multiple products in batch
+// Sync multiple products in batch - update to include GST
 server.post("/sync/products/batch", async (req, res) => {
   try {
     const { data } = req.body;
@@ -745,13 +748,14 @@ server.post("/sync/products/batch", async (req, res) => {
         
         let result;
         if (existingProductResult.rows.length > 0) {
-          // Update existing product
+          // Update existing product - now including GST
           result = await pool.query(
-            "UPDATE products SET price = $1, metrics = $2, discount = $3, date = $4, updated_at = CURRENT_TIMESTAMP WHERE id = $5 AND mid = $6 RETURNING *",
+            "UPDATE products SET price = $1, metrics = $2, discount = $3, gst = $4, date = $5, updated_at = CURRENT_TIMESTAMP WHERE id = $6 AND mid = $7 RETURNING *",
             [
               product.price || 0,
               product.metrics || 'unit',
               product.discount || 0,
+              product.gst || 0, // Add GST field
               product.date,
               existingProductResult.rows[0].id,
               mid
@@ -759,9 +763,9 @@ server.post("/sync/products/batch", async (req, res) => {
           );
           console.log("Updated product with ID:", existingProductResult.rows[0].id, "and MID:", mid);
         } else {
-          // Insert new product
+          // Insert new product - now including GST
           result = await pool.query(
-            "INSERT INTO products (id, mid, name, price, metrics, discount, date, created_at) VALUES ($1, $2, $3, $4, $5, $6, $7, CURRENT_TIMESTAMP) RETURNING *",
+            "INSERT INTO products (id, mid, name, price, metrics, discount, gst, date, created_at) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, CURRENT_TIMESTAMP) RETURNING *",
             [
               productId,
               mid,
@@ -769,6 +773,7 @@ server.post("/sync/products/batch", async (req, res) => {
               product.price || 0,
               product.metrics || 'unit',
               product.discount || 0,
+              product.gst || 0, // Add GST field
               product.date
             ]
           );
