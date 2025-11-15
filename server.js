@@ -179,7 +179,7 @@ server.post("/sync/bills", async (req, res) => {
     
     // Make sure we have an ID and merchant ID
     const billId = billData.id || parseInt(billData.billNumber) || Math.floor(Date.now() / 1000);
-    const merchantId = billData.mid || 1;
+    const merchantId = billData.mid ?? 1;
     
     // Check if a bill with this bill number and merchant id already exists
     const existingBillResult = await pool.query(
@@ -235,7 +235,7 @@ server.post("/sync/inventory", async (req, res) => {
     
     // Make sure we have an ID and merchant ID
     const inventoryId = inventoryData.id || Math.floor(Date.now() / 1000);
-    const merchantId = inventoryData.mid || 1;
+    const merchantId = inventoryData.mid ?? 1;
     
     // Check if inventory with this merchant_name, date, and mid already exists
     const existingInventoryResult = await pool.query(
@@ -292,7 +292,7 @@ server.post("/sync/inventories", async (req, res) => {
       try {
         // Make sure we have an ID and merchant ID
         const inventoryId = inventory.id || Math.floor(Date.now() / 1000);
-        const merchantId = inventory.mid || 1;
+        const merchantId = inventory.mid ?? 1;
         
         // Check if inventory with this merchant_name, date, and mid already exists
         const existingInventoryResult = await pool.query(
@@ -354,13 +354,14 @@ server.get("/sync/supply", async (req, res) => {
 
 server.post("/sync/supply", async (req, res) => {
   try {
-    const { name, mid = 1 } = req.body;
+    const { name, mid } = req.body;
+    const merchantId = mid ?? 1;
     const supplyId = Math.floor(Date.now() / 1000);
 
     // Check if supply with this name and mid already exists
     const existingSupplyResult = await pool.query(
       "SELECT id, mid FROM supply WHERE name = $1 AND mid = $2",
-      [name, mid]
+      [name, merchantId]
     );
     
     let result;
@@ -368,16 +369,16 @@ server.post("/sync/supply", async (req, res) => {
       // Update existing supply
       result = await pool.query(
         "UPDATE supply SET updated_at = CURRENT_TIMESTAMP WHERE id = $1 AND mid = $2 RETURNING *",
-        [existingSupplyResult.rows[0].id, mid]
+        [existingSupplyResult.rows[0].id, merchantId]
       );
-      console.log("Updated supply with ID:", existingSupplyResult.rows[0].id, "and MID:", mid);
+      console.log("Updated supply with ID:", existingSupplyResult.rows[0].id, "and MID:", merchantId);
     } else {
       // Insert new supply
       result = await pool.query(
         "INSERT INTO supply (id, mid, name, created_at) VALUES ($1, $2, $3, CURRENT_TIMESTAMP) RETURNING *",
-        [supplyId, mid, name]
+        [supplyId, merchantId, name]
       );
-      console.log("Inserted new supply with ID:", supplyId, "and MID:", mid);
+      console.log("Inserted new supply with ID:", supplyId, "and MID:", merchantId);
     }
     
     res.json(result.rows[0]);
@@ -410,7 +411,7 @@ server.post("/sync/supplies", async (req, res) => {
     for (const supply of suppliesArray) {
       try {
         const supplyId = supply.id || Math.floor(Date.now() / 1000);
-        const mid = supply.mid || 1;
+        const mid = supply.mid ?? 1;
         
         // Check if supply with this name and mid already exists
         const existingSupplyResult = await pool.query(
@@ -482,7 +483,8 @@ server.post("/sync/merchants", async (req, res) => {
     
     // Make sure we have an ID and merchant ID
     const merchantId = merchantData.id || Math.floor(Date.now() / 1000);
-    const mid = merchantData.mid || 1;
+    // const mid = merchantData.mid || 1;
+    const mid = merchantData.mid ?? 1;
     
     // Check if merchant with this name and mid already exists
     const existingMerchantResult = await pool.query(
@@ -539,7 +541,7 @@ server.post("/sync/merchants/batch", async (req, res) => {
       try {
         // Make sure we have an ID and merchant ID
         const merchantId = merchant.id || Math.floor(Date.now() / 1000);
-        const mid = merchant.mid || 1;
+        const mid = merchant.mid ?? 1;
         
         // Check if merchant with this name and mid already exists
         const existingMerchantResult = await pool.query(
@@ -613,7 +615,7 @@ server.post("/sync/production", async (req, res) => {
 
     // Make sure we have an ID and merchant ID
     const productionId = productionData.id || Math.floor(Date.now() / 1000);
-    const merchantId = productionData.mid || 1;
+    const merchantId = productionData.mid ?? 1;
     
     // Check if a production record with this date and mid already exists
     const existingResult = await pool.query(
@@ -670,7 +672,7 @@ server.post("/sync/products", async (req, res) => {
 
     // Make sure we have an ID and merchant ID
     const productId = productData.id || Math.floor(Date.now() / 1000);
-    const merchantId = productData.mid || 1;
+    const merchantId = productData.mid ?? 1;
     
     // Check if a product with this name and mid already exists
     const existingResult = await pool.query(
@@ -743,7 +745,7 @@ server.post("/sync/products/batch", async (req, res) => {
     for (const product of productsArray) {
       try {
         const productId = product.id || Math.floor(Date.now() / 1000);
-        const mid = product.mid || 1;
+        const mid = product.mid ?? 1;
         
         // Check if product with this name and mid already exists
         const existingProductResult = await pool.query(
@@ -1008,7 +1010,7 @@ server.post("/sync/bom", async (req, res) => {
 
     // Make sure we have an ID and merchant ID
     const bomId = bomData.id || Math.floor(Date.now() / 1000);
-    const merchantId = bomData.mid || 1;
+    const merchantId = bomData.mid ?? 1;
     
     // Check if a BOM with this name and mid already exists
     const existingResult = await pool.query(
@@ -1075,7 +1077,7 @@ server.post("/sync/bom/batch", async (req, res) => {
     for (const bom of bomsArray) {
       try {
         const bomId = bom.id || Math.floor(Date.now() / 1000);
-        const mid = bom.mid || 1;
+        const mid = bom.mid ?? 1;
         
         // Check if BOM with this name and mid already exists
         const existingBomResult = await pool.query(
