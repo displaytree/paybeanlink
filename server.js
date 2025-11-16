@@ -87,7 +87,9 @@ async function initDatabase() {
         id INTEGER NOT NULL,
         mid INTEGER DEFAULT 1 NOT NULL,
         name TEXT NOT NULL,
-        price NUMERIC DEFAULT 0,
+        mrp NUMERIC DEFAULT 0,
+        wsp NUMERIC DEFAULT 0,
+        sp NUMERIC DEFAULT 0,
         metrics TEXT DEFAULT 'unit',
         discount NUMERIC DEFAULT 0,
         gst NUMERIC DEFAULT 0,
@@ -684,9 +686,11 @@ server.post("/sync/products", async (req, res) => {
     if (existingResult.rows.length > 0) {
       // Update existing product - now including GST
       result = await pool.query(
-        "UPDATE products SET price = $1, metrics = $2, discount = $3, gst = $4, date = $5, updated_at = CURRENT_TIMESTAMP WHERE id = $6 AND mid = $7 RETURNING *",
+        "UPDATE products SET mrp = $1, wsp = $2, sp = $3, metrics = $4, discount = $5, gst = $6, date = $7, updated_at = CURRENT_TIMESTAMP WHERE id = $8 AND mid = $9 RETURNING *",
         [
-          productData.price || 0,
+          productData.mrp || 0,
+          productData.wsp || 0,
+          productData.sp || 0,
           productData.metrics || 'unit',
           productData.discount || 0,
           productData.gst || 0, // Add GST field
@@ -699,12 +703,14 @@ server.post("/sync/products", async (req, res) => {
     } else {
       // Insert new product - now including GST
       result = await pool.query(
-        "INSERT INTO products (id, mid, name, price, metrics, discount, gst, date, created_at) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, CURRENT_TIMESTAMP) RETURNING *",
+        "INSERT INTO products (id, mid, name, mrp, wsp, sp, metrics, discount, gst, date, created_at) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, CURRENT_TIMESTAMP) RETURNING *",
         [
           productId,
           merchantId,
           productData.name,
-          productData.price || 0,
+          productData.mrp || 0,
+          productData.wsp || 0,
+          productData.sp || 0,
           productData.metrics || 'unit',
           productData.discount || 0,
           productData.gst || 0, // Add GST field
@@ -757,9 +763,11 @@ server.post("/sync/products/batch", async (req, res) => {
         if (existingProductResult.rows.length > 0) {
           // Update existing product - now including GST
           result = await pool.query(
-            "UPDATE products SET price = $1, metrics = $2, discount = $3, gst = $4, date = $5, updated_at = CURRENT_TIMESTAMP WHERE id = $6 AND mid = $7 RETURNING *",
+            "UPDATE products SET mrp = $1, wsp = $2, sp = $3, metrics = $4, discount = $5, gst = $6, date = $7, updated_at = CURRENT_TIMESTAMP WHERE id = $8 AND mid = $9 RETURNING *",
             [
-              product.price || 0,
+              product.mrp || 0,
+              product.wsp || 0,
+              product.sp || 0,
               product.metrics || 'unit',
               product.discount || 0,
               product.gst || 0, // Add GST field
@@ -772,12 +780,14 @@ server.post("/sync/products/batch", async (req, res) => {
         } else {
           // Insert new product - now including GST
           result = await pool.query(
-            "INSERT INTO products (id, mid, name, price, metrics, discount, gst, date, created_at) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, CURRENT_TIMESTAMP) RETURNING *",
+            "INSERT INTO products (id, mid, name, mrp, wsp, sp, metrics, discount, gst, date, created_at) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, CURRENT_TIMESTAMP) RETURNING *",
             [
               productId,
               mid,
               product.name,
-              product.price || 0,
+              product.mrp || 0,
+              product.wsp || 0,
+              product.sp || 0,
               product.metrics || 'unit',
               product.discount || 0,
               product.gst || 0, // Add GST field

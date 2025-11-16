@@ -115,66 +115,84 @@
       "items": [
         {
           "name": "Classic Chicken Pizza",
-          "price": 160,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 160,
+          "wsp": 160,
+          "sp": 160
         },
         {
           "name": "Golden Gate Chicken Pizza",
-          "price": 180,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 180,
+          "wsp": 180,
+          "sp": 180
         },
         {
           "name": "Supreme Pepper Chicken Pizza",
-          "price": 180,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 180,
+          "wsp": 180,
+          "sp": 180
         },
         {
           "name": "BBQ Chicken Pizza",
-          "price": 190,
           "discount": 0,
           "metrics": "unit",
-          "gst": 18
+          "gst": 18,
+          "mrp": 190,
+          "wsp": 190,
+          "sp": 190
         },
         {
           "name": "Chicken Delight Pizza",
-          "price": 210,
           "discount": 0,
           "metrics": "unit",
-          "gst": 18
+          "gst": 18,
+          "mrp": 210,
+          "wsp": 210,
+          "sp": 210
         },
         {
           "name": "Tandoori Tikka Chicken Pizza",
-          "price": 190,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 190,
+          "wsp": 190,
+          "sp": 190
         },
         {
           "name": "Wheat bread",
-          "price": 50,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 50,
+          "wsp": 50,
+          "sp": 50
         },
-            {
+        {
           "name": "milk Bread",
-          "price": 35,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 35,
+          "wsp": 35,
+          "sp": 35
         },
         {
           "name": "Sandwich Bread",
-          "price": 100,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 100,
+          "wsp": 100,
+          "sp": 100
         }
       ]
     },
@@ -183,2082 +201,2676 @@
       "items": [
         {
           "name": "Classic Chicken Pizza",
-          "price": 160,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 160,
+          "wsp": 160,
+          "sp": 160
         },
         {
           "name": "Golden Gate Chicken Pizza",
-          "price": 180,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 180,
+          "wsp": 180,
+          "sp": 180
         },
         {
           "name": "Supreme Pepper Chicken Pizza",
-          "price": 180,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 180,
+          "wsp": 180,
+          "sp": 180
         },
         {
           "name": "BBQ Chicken Pizza",
-          "price": 190,
           "discount": 0,
           "metrics": "unit",
-          "gst": 18
+          "gst": 18,
+          "mrp": 190,
+          "wsp": 190,
+          "sp": 190
         },
         {
           "name": "Chicken Delight Pizza",
-          "price": 210,
           "discount": 0,
           "metrics": "unit",
-          "gst": 18
+          "gst": 18,
+          "mrp": 210,
+          "wsp": 210,
+          "sp": 210
         },
         {
           "name": "Tandoori Tikka Chicken Pizza",
-          "price": 190,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 190,
+          "wsp": 190,
+          "sp": 190
         },
         {
           "name": "Peri Peri Chicken Pizza",
-          "price": 190,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 190,
+          "wsp": 190,
+          "sp": 190
         },
         {
           "name": "Dominator Chicken Pizza",
-          "price": 250,
           "discount": 0,
           "metrics": "unit",
-          "gst": 18
+          "gst": 18,
+          "mrp": 250,
+          "wsp": 250,
+          "sp": 250
         },
         {
           "name": "Farm Fresh Pizza",
-          "price": 140,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 140,
+          "wsp": 140,
+          "sp": 140
         },
         {
           "name": "Veg Pepper Pizza",
-          "price": 150,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 150,
+          "wsp": 150,
+          "sp": 150
         },
         {
           "name": "Golden Corn Pizza",
-          "price": 160,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 160,
+          "wsp": 160,
+          "sp": 160
         },
         {
           "name": "Anti-Social Pizza",
-          "price": 180,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 180,
+          "wsp": 180,
+          "sp": 180
         },
         {
           "name": "Veg Supreme Pizza",
-          "price": 200,
           "discount": 0,
           "metrics": "unit",
-          "gst": 18
+          "gst": 18,
+          "mrp": 200,
+          "wsp": 200,
+          "sp": 200
         },
         {
           "name": "Exotica Tandoori Paneer Pizza",
-          "price": 180,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 180,
+          "wsp": 180,
+          "sp": 180
         },
         {
           "name": "Peri Peri Paneer Pizza",
-          "price": 180,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 180,
+          "wsp": 180,
+          "sp": 180
         },
         {
           "name": "Barbeque Paneer Pizza",
-          "price": 190,
           "discount": 0,
           "metrics": "unit",
-          "gst": 18
+          "gst": 18,
+          "mrp": 190,
+          "wsp": 190,
+          "sp": 190
         },
         {
           "name": "Dominator  Paneer Pizza",
-          "price": 260,
           "discount": 0,
           "metrics": "unit",
-          "gst": 18
+          "gst": 18,
+          "mrp": 260,
+          "wsp": 260,
+          "sp": 260
         },
         {
           "name": "Regular Chicken Burger",
-          "price": 90,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 90,
+          "wsp": 90,
+          "sp": 90
         },
         {
           "name": "Chicken Cheese Burger",
-          "price": 110,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 110,
+          "wsp": 110,
+          "sp": 110
         },
         {
           "name": "Jumbo Chicken Burger",
-          "price": 130,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 130,
+          "wsp": 130,
+          "sp": 130
         },
         {
           "name": "Jumbo Chicken Cheese Burger",
-          "price": 150,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 150,
+          "wsp": 150,
+          "sp": 150
         },
         {
           "name": "Tandoori Chicken Burger",
-          "price": 120,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 120,
+          "wsp": 120,
+          "sp": 120
         },
         {
           "name": "Tandoori Chicken Cheese Burger",
-          "price": 140,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 140,
+          "wsp": 140,
+          "sp": 140
         },
         {
           "name": "Malaysian Chicken Burger",
-          "price": 150,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 150,
+          "wsp": 150,
+          "sp": 150
         },
         {
           "name": "Malaysian Chicken Cheese Burger",
-          "price": 170,
           "discount": 0,
           "metrics": "unit",
-          "gst": 18
+          "gst": 18,
+          "mrp": 170,
+          "wsp": 170,
+          "sp": 170
         },
         {
           "name": "Barbeque Chicken Burger",
-          "price": 120,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 120,
+          "wsp": 120,
+          "sp": 120
         },
         {
           "name": "Barbeque Chicken Cheese Burger",
-          "price": 140,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 140,
+          "wsp": 140,
+          "sp": 140
         },
         {
           "name": "No bun chicken burger",
-          "price": 200,
           "discount": 0,
           "metrics": "unit",
-          "gst": 18
+          "gst": 18,
+          "mrp": 200,
+          "wsp": 200,
+          "sp": 200
         },
         {
           "name": "fried chicken burger",
-          "price": 150,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 150,
+          "wsp": 150,
+          "sp": 150
         },
         {
           "name": "Bombshell Chicken Burger",
-          "price": 120,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 120,
+          "wsp": 120,
+          "sp": 120
         },
         {
           "name": "Bombshell Chicken Cheese Burger",
-          "price": 140,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 140,
+          "wsp": 140,
+          "sp": 140
         },
         {
           "name": "Regular Veg Burger",
-          "price": 80,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 80,
+          "wsp": 80,
+          "sp": 80
         },
         {
           "name": "Veg Cheese Burger",
-          "price": 100,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 100,
+          "wsp": 100,
+          "sp": 100
         },
         {
           "name": "Jumbo Veg Burger",
-          "price": 130,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 130,
+          "wsp": 130,
+          "sp": 130
         },
         {
           "name": "Jumbo Veg Cheese Burger",
-          "price": 150,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 150,
+          "wsp": 150,
+          "sp": 150
         },
         {
           "name": "Double Veg Burger",
-          "price": 130,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 130,
+          "wsp": 130,
+          "sp": 130
         },
         {
           "name": "Tandoori Veg Burger",
-          "price": 120,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 120,
+          "wsp": 120,
+          "sp": 120
         },
         {
           "name": "Barbeque Veg Burger",
-          "price": 120,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 120,
+          "wsp": 120,
+          "sp": 120
         },
         {
           "name": "Bombshell Veg Burger",
-          "price": 120,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 120,
+          "wsp": 120,
+          "sp": 120
         },
         {
           "name": "Tandoori Veg CheeseBurger",
-          "price": 140,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 140,
+          "wsp": 140,
+          "sp": 140
         },
         {
           "name": "Barbeque Veg Cheese Burger",
-          "price": 140,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 140,
+          "wsp": 140,
+          "sp": 140
         },
         {
           "name": "Bombshell Veg Cheese Burger",
-          "price": 140,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 140,
+          "wsp": 140,
+          "sp": 140
         },
         {
           "name": "Egg Sandwich",
-          "price": 90,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 90,
+          "wsp": 90,
+          "sp": 90
         },
         {
           "name": "Chicken Sandwich",
-          "price": 100,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 100,
+          "wsp": 100,
+          "sp": 100
         },
         {
           "name": "Chicken Cheese Sandwich",
-          "price": 120,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 120,
+          "wsp": 120,
+          "sp": 120
         },
         {
           "name": "Malaysian  Chicken Sandwich",
-          "price": 140,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 140,
+          "wsp": 140,
+          "sp": 140
         },
         {
           "name": "Barbeque Chicken Sandwich",
-          "price": 140,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 140,
+          "wsp": 140,
+          "sp": 140
         },
         {
           "name": "Bombshell Chicken Sandwich",
-          "price": 140,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 140,
+          "wsp": 140,
+          "sp": 140
         },
         {
           "name": "Tandoori Chicken Sandwich",
-          "price": 140,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 140,
+          "wsp": 140,
+          "sp": 140
         },
         {
           "name": "Chicken momo Sandwich",
-          "price": 150,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 150,
+          "wsp": 150,
+          "sp": 150
         },
         {
           "name": "Egg Cheese Sandwich",
-          "price": 110,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 110,
+          "wsp": 110,
+          "sp": 110
         },
         {
           "name": "Malaysian  Chicken Cheese Sandwich",
-          "price": 160,
           "discount": 0,
           "metrics": "unit",
-          "gst": 18
+          "gst": 18,
+          "mrp": 160,
+          "wsp": 160,
+          "sp": 160
         },
         {
           "name": "Barbeque Chicken Cheese Sandwich",
-          "price": 160,
           "discount": 0,
           "metrics": "unit",
-          "gst": 18
+          "gst": 18,
+          "mrp": 160,
+          "wsp": 160,
+          "sp": 160
         },
         {
           "name": "Bombshell Chicken Cheese Sandwich",
-          "price": 160,
           "discount": 0,
           "metrics": "unit",
-          "gst": 18
+          "gst": 18,
+          "mrp": 160,
+          "wsp": 160,
+          "sp": 160
         },
         {
           "name": "Tandoori Chicken Cheese Sandwich",
-          "price": 160,
           "discount": 0,
           "metrics": "unit",
-          "gst": 18
+          "gst": 18,
+          "mrp": 160,
+          "wsp": 160,
+          "sp": 160
         },
         {
           "name": "Chicken momo Cheese Sandwich",
-          "price": 170,
           "discount": 0,
           "metrics": "unit",
-          "gst": 18
+          "gst": 18,
+          "mrp": 170,
+          "wsp": 170,
+          "sp": 170
         },
         {
           "name": "Veg Sandwich",
-          "price": 90,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 90,
+          "wsp": 90,
+          "sp": 90
         },
         {
           "name": "Veg Cheese Sandwich",
-          "price": 110,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 110,
+          "wsp": 110,
+          "sp": 110
         },
         {
           "name": "Chilli Cheese Sandwich",
-          "price": 90,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 90,
+          "wsp": 90,
+          "sp": 90
         },
         {
           "name": "Sweet Corn Sandwich",
-          "price": 100,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 100,
+          "wsp": 100,
+          "sp": 100
         },
         {
           "name": "Barbeque Veg Sandwich",
-          "price": 120,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 120,
+          "wsp": 120,
+          "sp": 120
         },
         {
           "name": "Bombshell Veg Sandwich",
-          "price": 120,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 120,
+          "wsp": 120,
+          "sp": 120
         },
         {
           "name": "Tandoori Veg Sandwich",
-          "price": 120,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 120,
+          "wsp": 120,
+          "sp": 120
         },
         {
           "name": "Double Veg Sandwich",
-          "price": 130,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 130,
+          "wsp": 130,
+          "sp": 130
         },
         {
           "name": "Chocolate Sandwich",
-          "price": 100,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 100,
+          "wsp": 100,
+          "sp": 100
         },
         {
           "name": "veg momo Sandwich",
-          "price": 140,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 140,
+          "wsp": 140,
+          "sp": 140
         },
         {
           "name": "Sweet Corn Cheese Sandwich",
-          "price": 100,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 100,
+          "wsp": 100,
+          "sp": 100
         },
         {
           "name": "Barbeque Veg Cheese Sandwich",
-          "price": 120,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 120,
+          "wsp": 120,
+          "sp": 120
         },
         {
           "name": "Bombshell Veg Cheese Sandwich",
-          "price": 120,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 120,
+          "wsp": 120,
+          "sp": 120
         },
         {
           "name": "Tandoori Veg Cheese Sandwich",
-          "price": 120,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 120,
+          "wsp": 120,
+          "sp": 120
         },
         {
           "name": "Double Veg Cheese Sandwich",
-          "price": 130,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 130,
+          "wsp": 130,
+          "sp": 130
         },
         {
           "name": "Chocolate Sandwich",
-          "price": 100,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 100,
+          "wsp": 100,
+          "sp": 100
         },
         {
           "name": "veg momo Cheese Sandwich",
-          "price": 140,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 140,
+          "wsp": 140,
+          "sp": 140
         },
         {
           "name": "Masala Omelette",
-          "price": 70,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 70,
+          "wsp": 70,
+          "sp": 70
         },
         {
           "name": "Cheese Omelette",
-          "price": 100,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 100,
+          "wsp": 100,
+          "sp": 100
         },
         {
           "name": "French Fries",
-          "price": 90,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 90,
+          "wsp": 90,
+          "sp": 90
         },
         {
           "name": "Andra French Fries",
-          "price": 120,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 120,
+          "wsp": 120,
+          "sp": 120
         },
         {
           "name": "Lemon Pepper Fries",
-          "price": 110,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 110,
+          "wsp": 110,
+          "sp": 110
         },
         {
           "name": "Cheesy French Fries",
-          "price": 120,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 120,
+          "wsp": 120,
+          "sp": 120
         },
         {
           "name": "Peri Peri French Fries",
-          "price": 120,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 120,
+          "wsp": 120,
+          "sp": 120
         },
         {
           "name": "Chicken Nuggets",
-          "price": 100,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 100,
+          "wsp": 100,
+          "sp": 100
         },
         {
           "name": "Chicken Popcorn",
-          "price": 100,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 100,
+          "wsp": 100,
+          "sp": 100
         },
         {
           "name": "Chicken Cutlet",
-          "price": 80,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 80,
+          "wsp": 80,
+          "sp": 80
         },
         {
           "name": "Potato Smilies",
-          "price": 100,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 100,
+          "wsp": 100,
+          "sp": 100
         },
         {
           "name": "Veg Cutlet",
-          "price": 70,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 70,
+          "wsp": 70,
+          "sp": 70
         },
         {
           "name": "Veg Nuggets",
-          "price": 90,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 90,
+          "wsp": 90,
+          "sp": 90
         },
         {
           "name": "Garlic Potato Pops",
-          "price": 90,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 90,
+          "wsp": 90,
+          "sp": 90
         },
         {
           "name": "Corn Cheese Nuggets",
-          "price": 100,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 100,
+          "wsp": 100,
+          "sp": 100
         },
         {
           "name": "Brownie",
-          "price": 80,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 80,
+          "wsp": 80,
+          "sp": 80
         },
         {
           "name": "Brownie Blast",
-          "price": 150,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 150,
+          "wsp": 150,
+          "sp": 150
         },
         {
           "name": "Brownie with icecream",
-          "price": 110,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 110,
+          "wsp": 110,
+          "sp": 110
         },
         {
           "name": "Lava",
-          "price": 80,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 80,
+          "wsp": 80,
+          "sp": 80
         },
         {
           "name": "Lemon Ice Tea",
-          "price": 80,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 80,
+          "wsp": 80,
+          "sp": 80
         },
         {
           "name": "Mint Ice Tea",
-          "price": 90,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 90,
+          "wsp": 90,
+          "sp": 90
         },
         {
           "name": "Strawberry Ice Tea",
-          "price": 90,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 90,
+          "wsp": 90,
+          "sp": 90
         },
         {
           "name": "blueberry Ice Tea",
-          "price": 100,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 100,
+          "wsp": 100,
+          "sp": 100
         },
         {
           "name": "Plain Mojito",
-          "price": 80,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 80,
+          "wsp": 80,
+          "sp": 80
         },
         {
           "name": "Watermelon mojito",
-          "price": 90,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 90,
+          "wsp": 90,
+          "sp": 90
         },
         {
           "name": "Litchi mojito",
-          "price": 100,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 100,
+          "wsp": 100,
+          "sp": 100
         },
         {
           "name": "Strawberry mojito",
-          "price": 100,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 100,
+          "wsp": 100,
+          "sp": 100
         },
         {
           "name": "Virgin Mojito",
-          "price": 80,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 80,
+          "wsp": 80,
+          "sp": 80
         },
         {
           "name": "Aquaa mojito",
-          "price": 110,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 110,
+          "wsp": 110,
+          "sp": 110
         },
         {
           "name": "Mango Falooda",
-          "price": 140,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 140,
+          "wsp": 140,
+          "sp": 140
         },
         {
           "name": "Strawberry Falooda",
-          "price": 140,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 140,
+          "wsp": 140,
+          "sp": 140
         },
         {
           "name": "Chocolate Falooda",
-          "price": 140,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 140,
+          "wsp": 140,
+          "sp": 140
         },
         {
           "name": "Butterscotch Falooda",
-          "price": 140,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 140,
+          "wsp": 140,
+          "sp": 140
         },
         {
           "name": "Dry Fruits Falooda",
-          "price": 160,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 160,
+          "wsp": 160,
+          "sp": 160
         },
         {
           "name": "Coffee Falooda",
-          "price": 160,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 160,
+          "wsp": 160,
+          "sp": 160
         },
         {
           "name": "Dark Chocolate Falooda",
-          "price": 190,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 190,
+          "wsp": 190,
+          "sp": 190
         },
         {
           "name": "White Chocolate Falooda",
-          "price": 190,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 190,
+          "wsp": 190,
+          "sp": 190
         },
         {
           "name": "Caramel Falooda",
-          "price": 180,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 180,
+          "wsp": 180,
+          "sp": 180
         },
         {
           "name": "Kitkat Shake",
-          "price": 130,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 130,
+          "wsp": 130,
+          "sp": 130
         },
         {
           "name": "Toblerone Milk Shake",
-          "price": 140,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 140,
+          "wsp": 140,
+          "sp": 140
         },
         {
           "name": "Toblerone White Shake",
-          "price": 150,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 150,
+          "wsp": 150,
+          "sp": 150
         },
         {
           "name": "Oreo Shake",
-          "price": 130,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 130,
+          "wsp": 130,
+          "sp": 130
         },
         {
           "name": "Mars Shake",
-          "price": 130,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 130,
+          "wsp": 130,
+          "sp": 130
         },
         {
           "name": "Brownie Shake",
-          "price": 150,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 150,
+          "wsp": 150,
+          "sp": 150
         },
         {
           "name": "Ferrero Rocher Shake",
-          "price": 200,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 200,
+          "wsp": 200,
+          "sp": 200
         },
         {
           "name": "M&M Shake",
-          "price": 130,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 130,
+          "wsp": 130,
+          "sp": 130
         },
         {
           "name": "Black Forest Shake",
-          "price": 140,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 140,
+          "wsp": 140,
+          "sp": 140
         },
         {
           "name": "Dark Chocolate Shake",
-          "price": 160,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 160,
+          "wsp": 160,
+          "sp": 160
         },
         {
           "name": "Nutella Brownie Shake",
-          "price": 220,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 220,
+          "wsp": 220,
+          "sp": 220
         },
         {
           "name": "Caramel Oreo Shake",
-          "price": 180,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 180,
+          "wsp": 180,
+          "sp": 180
         },
         {
           "name": "Triple Chocolate Shake",
-          "price": 250,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 250,
+          "wsp": 250,
+          "sp": 250
         },
         {
           "name": "Bourbon Shake",
-          "price": 150,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 150,
+          "wsp": 150,
+          "sp": 150
         },
         {
           "name": "Belgium Dark Chocolate Shake",
-          "price": 220,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 220,
+          "wsp": 220,
+          "sp": 220
         },
         {
           "name": "5 Star Shake",
-          "price": 150,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 150,
+          "wsp": 150,
+          "sp": 150
         },
         {
           "name": "Crunchy Horlicks Shake",
-          "price": 180,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 180,
+          "wsp": 180,
+          "sp": 180
         },
         {
           "name": "Nutella Shake",
-          "price": 210,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 210,
+          "wsp": 210,
+          "sp": 210
         },
         {
           "name": "Choco Almond Shake",
-          "price": 210,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 210,
+          "wsp": 210,
+          "sp": 210
         },
         {
           "name": "Hand Blended Black Forest Shake",
-          "price": 180,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 180,
+          "wsp": 180,
+          "sp": 180
         },
         {
           "name": "Hand Blended Jamun Shake",
-          "price": 180,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 180,
+          "wsp": 180,
+          "sp": 180
         },
         {
           "name": "Fresh Ginger Shake",
-          "price": 130,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 130,
+          "wsp": 130,
+          "sp": 130
         },
         {
           "name": "Fresh Chilli Shake",
-          "price": 120,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 120,
+          "wsp": 120,
+          "sp": 120
         },
         {
           "name": "Fresh Mango Shake",
-          "price": 110,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 110,
+          "wsp": 110,
+          "sp": 110
         },
         {
           "name": "Fresh Litchi Shake",
-          "price": 130,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 130,
+          "wsp": 130,
+          "sp": 130
         },
         {
           "name": "Fresh Strawberry Shake",
-          "price": 110,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 110,
+          "wsp": 110,
+          "sp": 110
         },
         {
           "name": "Black Currant Shake",
-          "price": 140,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 140,
+          "wsp": 140,
+          "sp": 140
         },
         {
           "name": "Vanilla Shake",
-          "price": 100,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 100,
+          "wsp": 100,
+          "sp": 100
         },
         {
           "name": "Rose Shake",
-          "price": 120,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 120,
+          "wsp": 120,
+          "sp": 120
         },
         {
           "name": "Chocolate Shake",
-          "price": 110,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 110,
+          "wsp": 110,
+          "sp": 110
         },
         {
           "name": "Butterscotch Shake",
-          "price": 110,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 110,
+          "wsp": 110,
+          "sp": 110
         },
         {
           "name": "Nuts About You de Lechera Shake",
-          "price": 150,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 150,
+          "wsp": 150,
+          "sp": 150
         },
         {
           "name": "Choco Crunch de Lechera Shake",
-          "price": 140,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 140,
+          "wsp": 140,
+          "sp": 140
         },
         {
           "name": "Oreo de Lechera Shake",
-          "price": 140,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 140,
+          "wsp": 140,
+          "sp": 140
         },
         {
           "name": "Brownie de Lechera Shake",
-          "price": 170,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 170,
+          "wsp": 170,
+          "sp": 170
         },
         {
           "name": "Green pista",
-          "price": 120,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 120,
+          "wsp": 120,
+          "sp": 120
         },
         {
           "name": "Choco Crunch Shake",
-          "price": 120,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 120,
+          "wsp": 120,
+          "sp": 120
         },
         {
           "name": "Dry Fruits & Nuts Shake",
-          "price": 140,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 140,
+          "wsp": 140,
+          "sp": 140
         },
         {
           "name": "Black Current Ice cream",
-          "price": 90,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 90,
+          "wsp": 90,
+          "sp": 90
         },
         {
           "name": "Vanila Icecream",
-          "price": 70,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 70,
+          "wsp": 70,
+          "sp": 70
         },
         {
           "name": "Nuts About You Ice Cream",
-          "price": 100,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 100,
+          "wsp": 100,
+          "sp": 100
         },
         {
           "name": "Butterscotch Icecream",
-          "price": 70,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 70,
+          "wsp": 70,
+          "sp": 70
         },
         {
           "name": "Choco Crunch Ice Cream",
-          "price": 80,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 80,
+          "wsp": 80,
+          "sp": 80
         },
         {
           "name": "Chocolate Icecream",
-          "price": 70,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 70,
+          "wsp": 70,
+          "sp": 70
         },
         {
           "name": "Strawberry Icecream",
-          "price": 70,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 70,
+          "wsp": 70,
+          "sp": 70
         },
         {
           "name": "Mango Icecream",
-          "price": 70,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 70,
+          "wsp": 70,
+          "sp": 70
         },
         {
           "name": "Lime Soda",
-          "price": 60,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 60,
+          "wsp": 60,
+          "sp": 60
         },
         {
           "name": "Masala Soda",
-          "price": 70,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 70,
+          "wsp": 70,
+          "sp": 70
         },
         {
           "name": "Blue Curraco Soda",
-          "price": 70,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 70,
+          "wsp": 70,
+          "sp": 70
         },
         {
           "name": "Red Curraco Soda",
-          "price": 70,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 70,
+          "wsp": 70,
+          "sp": 70
         },
         {
           "name": "Green Curraco Soda",
-          "price": 70,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 70,
+          "wsp": 70,
+          "sp": 70
         },
         {
           "name": "Very Berry Soda",
-          "price": 80,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 80,
+          "wsp": 80,
+          "sp": 80
         },
         {
           "name": "Ice Cream Soda",
-          "price": 90,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 90,
+          "wsp": 90,
+          "sp": 90
         },
         {
           "name": "Chilli Choctail Shake",
-          "price": 140,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 140,
+          "wsp": 140,
+          "sp": 140
         },
         {
           "name": "Irish Choctail Shake",
-          "price": 150,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 150,
+          "wsp": 150,
+          "sp": 150
         },
         {
           "name": "Caramel Choctail Shake",
-          "price": 150,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 150,
+          "wsp": 150,
+          "sp": 150
         },
         {
           "name": "Pistachio Choctail Shake",
-          "price": 200,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 200,
+          "wsp": 200,
+          "sp": 200
         },
         {
           "name": "Rose Choctail Shake",
-          "price": 180,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 180,
+          "wsp": 180,
+          "sp": 180
         },
         {
           "name": "Berry Choctail Shake",
-          "price": 180,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 180,
+          "wsp": 180,
+          "sp": 180
         },
         {
           "name": "Mango Choctail Shake",
-          "price": 150,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 150,
+          "wsp": 150,
+          "sp": 150
         },
         {
           "name": "Red Velvet Shake",
-          "price": 150,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 150,
+          "wsp": 150,
+          "sp": 150
         },
         {
           "name": "Red Velvet Oreo Shake",
-          "price": 160,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 160,
+          "wsp": 160,
+          "sp": 160
         },
         {
           "name": "Peanut Butter Oreo Shake",
-          "price": 140,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 140,
+          "wsp": 140,
+          "sp": 140
         },
         {
           "name": "Mint Oreo Shake",
-          "price": 100,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 100,
+          "wsp": 100,
+          "sp": 100
         },
         {
           "name": "Strawberry Oreo Shake",
-          "price": 110,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 110,
+          "wsp": 110,
+          "sp": 110
         },
         {
           "name": "Brownie Oreo Shake",
-          "price": 150,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 150,
+          "wsp": 150,
+          "sp": 150
         },
         {
           "name": "Chocolate Oreo Shake",
-          "price": 110,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 110,
+          "wsp": 110,
+          "sp": 110
         },
         {
           "name": "Kitkat Oreo Shake",
-          "price": 130,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 130,
+          "wsp": 130,
+          "sp": 130
         },
         {
           "name": "Snicker Oreo Shake",
-          "price": 150,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 150,
+          "wsp": 150,
+          "sp": 150
         },
         {
           "name": "Nutty Oreo Shake",
-          "price": 150,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 150,
+          "wsp": 150,
+          "sp": 150
         },
         {
           "name": "Hazelnut Oreo Shake",
-          "price": 160,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 160,
+          "wsp": 160,
+          "sp": 160
         },
         {
           "name": "Dark Chocolate Oreo Shake",
-          "price": 160,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 160,
+          "wsp": 160,
+          "sp": 160
         },
         {
           "name": "Berry Oreo Shake",
-          "price": 180,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 180,
+          "wsp": 180,
+          "sp": 180
         },
         {
           "name": "Butterscotch Oreo Shake",
-          "price": 120,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 120,
+          "wsp": 120,
+          "sp": 120
         },
         {
           "name": "Caramel Oreo Shake",
-          "price": 180,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 180,
+          "wsp": 180,
+          "sp": 180
         },
         {
           "name": "Nutella Oreo Shake",
-          "price": 210,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 210,
+          "wsp": 210,
+          "sp": 210
         },
         {
           "name": "Salted Caramel Oreo Shake",
-          "price": 180,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 180,
+          "wsp": 180,
+          "sp": 180
         },
         {
           "name": "Coconut Oreo Shake",
-          "price": 150,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 150,
+          "wsp": 150,
+          "sp": 150
         },
         {
           "name": "Banana Oreo Shake",
-          "price": 110,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 110,
+          "wsp": 110,
+          "sp": 110
         },
         {
           "name": "Magnum Oreo Shake",
-          "price": 250,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 250,
+          "wsp": 250,
+          "sp": 250
         },
         {
           "name": "Mango Oreo Shake",
-          "price": 130,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 130,
+          "wsp": 130,
+          "sp": 130
         },
         {
           "name": "Pista Oreo Shake",
-          "price": 160,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 160,
+          "wsp": 160,
+          "sp": 160
         },
         {
           "name": "Cookies Oreo Shake",
-          "price": 150,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 150,
+          "wsp": 150,
+          "sp": 150
         },
         {
           "name": "Vanilla(1kg) Fresh Cream cake",
-          "price": 700,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 700,
+          "wsp": 700,
+          "sp": 700
         },
         {
           "name": "Vanilla(500g)  Fresh Cream cake",
-          "price": 350,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 350,
+          "wsp": 350,
+          "sp": 350
         },
         {
           "name": "Pineapple(1kg) Fresh Cream cake",
-          "price": 720,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 720,
+          "wsp": 720,
+          "sp": 720
         },
         {
           "name": "Pineapple(500g) Fresh Cream cake",
-          "price": 350,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 350,
+          "wsp": 350,
+          "sp": 350
         },
         {
           "name": "Black Forest(1kg) Fresh Cream cake",
-          "price": 750,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 750,
+          "wsp": 750,
+          "sp": 750
         },
         {
           "name": "Black Forest(500g) Fresh Cream cake",
-          "price": 400,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 400,
+          "wsp": 400,
+          "sp": 400
         },
         {
           "name": "Butterscotch(1kg) Fresh Cream cake",
-          "price": 800,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 800,
+          "wsp": 800,
+          "sp": 800
         },
         {
           "name": "Butterscotch(500g) Fresh Cream cake",
-          "price": 420,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 420,
+          "wsp": 420,
+          "sp": 420
         },
         {
           "name": "White Forest(1kg) Fresh Cream cake",
-          "price": 800,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 800,
+          "wsp": 800,
+          "sp": 800
         },
         {
           "name": "White Forest(500g) Fresh Cream cake",
-          "price": 420,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 420,
+          "wsp": 420,
+          "sp": 420
         },
         {
           "name": "German Forest(1kg) Fresh Cream cake",
-          "price": 850,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 850,
+          "wsp": 850,
+          "sp": 850
         },
         {
           "name": "ChocolateTruffle(1kg) Fresh Cream cake",
-          "price": 950,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 950,
+          "wsp": 950,
+          "sp": 950
         },
         {
           "name": "ChocolateTruffle(500g) Fresh Cream cake",
-          "price": 470,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 470,
+          "wsp": 470,
+          "sp": 470
         },
         {
           "name": "Strawberry(1kg) Fresh Cream cake",
-          "price": 780,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 780,
+          "wsp": 780,
+          "sp": 780
         },
         {
           "name": "Strawberry(500g) Fresh Cream cake",
-          "price": 400,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 400,
+          "wsp": 400,
+          "sp": 400
         },
         {
           "name": "Blueberry(1kg) Fresh Cream cake",
-          "price": 850,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 850,
+          "wsp": 850,
+          "sp": 850
         },
         {
           "name": "Blueberry(500g) Fresh Cream cake",
-          "price": 450,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 450,
+          "wsp": 450,
+          "sp": 450
         },
         {
           "name": "Caramel(1kg) Fresh Cream cake",
-          "price": 800,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 800,
+          "wsp": 800,
+          "sp": 800
         },
         {
           "name": "Caramel(500g) Fresh Cream cake",
-          "price": 400,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 400,
+          "wsp": 400,
+          "sp": 400
         },
         {
           "name": "Irish Coffee(1kg) Fresh Cream cake",
-          "price": 800,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 800,
+          "wsp": 800,
+          "sp": 800
         },
         {
           "name": "Irish Coffee(500g) Fresh Cream cake",
-          "price": 420,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 420,
+          "wsp": 420,
+          "sp": 420
         },
         {
           "name": "Litchi(1kg) Fresh Cream cake",
-          "price": 720,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 720,
+          "wsp": 720,
+          "sp": 720
         },
         {
           "name": "Litchi(500g) Fresh Cream cake",
-          "price": 360,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 360,
+          "wsp": 360,
+          "sp": 360
         },
         {
           "name": "Mango(1kg) Fresh Cream cake",
-          "price": 780,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 780,
+          "wsp": 780,
+          "sp": 780
         },
         {
           "name": "Mango(500g) Fresh Cream cake",
-          "price": 400,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 400,
+          "wsp": 400,
+          "sp": 400
         },
         {
           "name": "Vanilla(1kg) Butter Cream Cake",
-          "price": 500,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 500,
+          "wsp": 500,
+          "sp": 500
         },
         {
           "name": "Vanilla(500g) Butter Cream Cake",
-          "price": 300,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 300,
+          "wsp": 300,
+          "sp": 300
         },
         {
           "name": "Pineapple(1kg) Butter Cream Cake",
-          "price": 500,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 500,
+          "wsp": 500,
+          "sp": 500
         },
         {
           "name": "Pineapple(500g) Butter Cream Cake",
-          "price": 300,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 300,
+          "wsp": 300,
+          "sp": 300
         },
         {
           "name": "Strawberry(1kg) Butter Cream Cake",
-          "price": 500,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 500,
+          "wsp": 500,
+          "sp": 500
         },
         {
           "name": "Strawberry(500g) Butter Cream Cake",
-          "price": 300,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 300,
+          "wsp": 300,
+          "sp": 300
         },
         {
           "name": "Butterscotch(1kg) Butter Cream Cake",
-          "price": 620,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 620,
+          "wsp": 620,
+          "sp": 620
         },
         {
           "name": "Butterscotch(500g) Butter Cream Cake",
-          "price": 350,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 350,
+          "wsp": 350,
+          "sp": 350
         },
         {
           "name": "Chocolate(1kg) Butter Cream Cake",
-          "price": 620,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 620,
+          "wsp": 620,
+          "sp": 620
         },
         {
           "name": "Chocolate(500g) Butter Cream Cake",
-          "price": 350,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 350,
+          "wsp": 350,
+          "sp": 350
         },
         {
           "name": "ChocolateTruffle(1kg) Butter Cream Cake",
-          "price": 670,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 670,
+          "wsp": 670,
+          "sp": 670
         },
         {
           "name": "ChocolateTruffle(500g) Butter Cream Cake",
-          "price": 350,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 350,
+          "wsp": 350,
+          "sp": 350
         },
         {
           "name": "Pista(1kg) Butter Cream Cake",
-          "price": 600,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 600,
+          "wsp": 600,
+          "sp": 600
         },
         {
           "name": "Pista(500g) Butter Cream Cake",
-          "price": 350,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 350,
+          "wsp": 350,
+          "sp": 350
         },
         {
           "name": "Honey Cake (1kg) Butter Cream Cake",
-          "price": 470,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 470,
+          "wsp": 470,
+          "sp": 470
         },
         {
           "name": "Honey Cake(500g) Butter Cream Cake",
-          "price": 250,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 250,
+          "wsp": 250,
+          "sp": 250
         },
         {
           "name": "Oreo and Truffle(1kg) Exotic Cake",
-          "price": 1050,
           "discount": 0,
           "metrics": "unit",
-          "gst": 18
+          "gst": 18,
+          "mrp": 1050,
+          "wsp": 1050,
+          "sp": 1050
         },
         {
           "name": "Oreo and Truffle(500g) Exotic Cake",
-          "price": 520,
           "discount": 0,
           "metrics": "unit",
-          "gst": 18
+          "gst": 18,
+          "mrp": 520,
+          "wsp": 520,
+          "sp": 520
         },
         {
           "name": "Fresh Lime",
-          "price": 40,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 40,
+          "wsp": 40,
+          "sp": 40
         },
         {
           "name": "Lime Mint",
-          "price": 50,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 50,
+          "wsp": 50,
+          "sp": 50
         },
         {
           "name": "Lassi",
-          "price": 60,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 60,
+          "wsp": 60,
+          "sp": 60
         },
         {
           "name": "Rose Milk",
-          "price": 70,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 70,
+          "wsp": 70,
+          "sp": 70
         },
         {
           "name": "cold Coffee",
-          "price": 100,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 100,
+          "wsp": 100,
+          "sp": 100
         },
         {
           "name": "Choco Frappaholic",
-          "price": 120,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 120,
+          "wsp": 120,
+          "sp": 120
         },
         {
           "name": "Strawberry Frappaholic",
-          "price": 120,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 120,
+          "wsp": 120,
+          "sp": 120
         },
         {
           "name": "Caramello Frappaholic",
-          "price": 150,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 150,
+          "wsp": 150,
+          "sp": 150
         },
         {
           "name": "Butterscotch Frappaholic",
-          "price": 120,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 120,
+          "wsp": 120,
+          "sp": 120
         },
         {
           "name": "White Chocolate Frappaholic",
-          "price": 150,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 150,
+          "wsp": 150,
+          "sp": 150
         },
         {
           "name": "Oreo Frappaholic",
-          "price": 140,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 140,
+          "wsp": 140,
+          "sp": 140
         },
         {
           "name": "Kit Kat Frappaholic",
-          "price": 140,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 140,
+          "wsp": 140,
+          "sp": 140
         },
         {
           "name": "Brunty Frappaholic",
-          "price": 130,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 130,
+          "wsp": 130,
+          "sp": 130
         },
         {
           "name": "Oats Frappaholic",
-          "price": 130,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 130,
+          "wsp": 130,
+          "sp": 130
         },
         {
           "name": "Brownie Frappaholic",
-          "price": 160,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 160,
+          "wsp": 160,
+          "sp": 160
         },
         {
           "name": "Veg momos",
-          "price": 100,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 100,
+          "wsp": 100,
+          "sp": 100
         },
         {
           "name": "Chicken Momos",
-          "price": 110,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 110,
+          "wsp": 110,
+          "sp": 110
         },
         {
           "name": "Fried leg",
-          "price": 120,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 120,
+          "wsp": 120,
+          "sp": 120
         },
         {
           "name": "Fried Lollypop",
-          "price": 120,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 120,
+          "wsp": 120,
+          "sp": 120
         },
         {
           "name": "cruncy pops",
-          "price": 120,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 120,
+          "wsp": 120,
+          "sp": 120
         },
         {
           "name": "Spicy hot wings",
-          "price": 120,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 120,
+          "wsp": 120,
+          "sp": 120
         },
         {
           "name": "Donut",
-          "price": 30,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 30,
+          "wsp": 30,
+          "sp": 30
         },
         {
           "name": "Cocunut Cookies",
-          "price": 60,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 60,
+          "wsp": 60,
+          "sp": 60
         },
         {
           "name": "Salt Biscuit 100 grm",
-          "price": 30,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 30,
+          "wsp": 30,
+          "sp": 30
         },
         {
           "name": "Biscuit 100grm",
-          "price": 30,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 30,
+          "wsp": 30,
+          "sp": 30
         },
         {
           "name": "banana Cake",
-          "price": 50,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 50,
+          "wsp": 50,
+          "sp": 50
         },
         {
           "name": "milk Bread",
-          "price": 35,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 35,
+          "wsp": 35,
+          "sp": 35
         },
         {
           "name": "mini bun",
-          "price": 30,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 30,
+          "wsp": 30,
+          "sp": 30
         },
         {
           "name": "Sandwich Bread",
-          "price": 100,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 100,
+          "wsp": 100,
+          "sp": 100
         },
         {
           "name": "Burger Bun (4 nos)",
-          "price": 60,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 60,
+          "wsp": 60,
+          "sp": 60
         },
         {
           "name": "6 Pizza Base (4 nos )",
-          "price": 80,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 80,
+          "wsp": 80,
+          "sp": 80
         },
         {
           "name": "varkey 100 grms",
-          "price": 30,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 30,
+          "wsp": 30,
+          "sp": 30
         },
         {
           "name": "Cream Bun",
-          "price": 20,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 20,
+          "wsp": 20,
+          "sp": 20
         },
         {
           "name": "Jam bun",
-          "price": 20,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 20,
+          "wsp": 20,
+          "sp": 20
         },
         {
           "name": "Wheat bread",
-          "price": 50,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 50,
+          "wsp": 50,
+          "sp": 50
         },
         {
           "name": "donut",
-          "price": 50.1,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 50.1,
+          "wsp": 50.1,
+          "sp": 50.1
         },
         {
           "name": "choco lava",
-          "price": 80,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 80,
+          "wsp": 80,
+          "sp": 80
         },
         {
           "name": "tres leches",
-          "price": 120,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 120,
+          "wsp": 120,
+          "sp": 120
         },
         {
           "name": "Blue berry cheesecake",
-          "price": 120,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 120,
+          "wsp": 120,
+          "sp": 120
         },
         {
           "name": "chocolate brownie",
-          "price": 80,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 80,
+          "wsp": 80,
+          "sp": 80
         },
         {
           "name": "cake pop",
-          "price": 20,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 20,
+          "wsp": 20,
+          "sp": 20
         },
         {
           "name": "apple tart",
-          "price": 150,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 150,
+          "wsp": 150,
+          "sp": 150
         },
         {
           "name": "Dark Chocolate Stick",
-          "price": 20,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 20,
+          "wsp": 20,
+          "sp": 20
         },
         {
           "name": "Dark Chocolate bite",
-          "price": 8,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 8,
+          "wsp": 8,
+          "sp": 8
         },
         {
           "name": "Black forest Piece Cake",
-          "price": 65,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 65,
+          "wsp": 65,
+          "sp": 65
         },
         {
           "name": "Red Velvet Piece Cake",
-          "price": 90,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 90,
+          "wsp": 90,
+          "sp": 90
         },
         {
           "name": "Blackcurrent Piece cake",
-          "price": 65,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 65,
+          "wsp": 65,
+          "sp": 65
         },
         {
           "name": "Pineapple piece Cake",
-          "price": 65,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 65,
+          "wsp": 65,
+          "sp": 65
         },
         {
           "name": "Choco truffel Piece Cake",
-          "price": 75,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 75,
+          "wsp": 75,
+          "sp": 75
         },
         {
           "name": "hbd flag",
-          "price": 100,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 100,
+          "wsp": 100,
+          "sp": 100
         },
         {
           "name": "poppers",
-          "price": 50,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 50,
+          "wsp": 50,
+          "sp": 50
         },
         {
           "name": "dark chocolate waffels",
-          "price": 100,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 100,
+          "wsp": 100,
+          "sp": 100
         },
         {
           "name": "triple chocolate waffel",
-          "price": 120,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 120,
+          "wsp": 120,
+          "sp": 120
         },
         {
           "name": "caramel",
-          "price": 20,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 20,
+          "wsp": 20,
+          "sp": 20
         },
         {
           "name": "korean cream cheese bun",
-          "price": 130,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 130,
+          "wsp": 130,
+          "sp": 130
         },
         {
           "name": "extra cheee",
-          "price": 20,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 20,
+          "wsp": 20,
+          "sp": 20
         },
         {
           "name": "extra cheese",
-          "price": 30,
           "discount": 0,
           "metrics": "unit",
-          "gst": 0
+          "gst": 0,
+          "mrp": 30,
+          "wsp": 30,
+          "sp": 30
         },
         {
           "name": "caramel brownie",
-          "price": 100,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 100,
+          "wsp": 100,
+          "sp": 100
         },
         {
           "name": "choco filled donut",
-          "price": 80,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 80,
+          "wsp": 80,
+          "sp": 80
         },
         {
           "name": "rasamlai tres leches",
-          "price": 150,
           "discount": 0,
           "metrics": "unit",
-          "gst": 5
+          "gst": 5,
+          "mrp": 150,
+          "wsp": 150,
+          "sp": 150
         }
       ]
     }
@@ -2266,62 +2878,272 @@
   "new": [
     {
       "id": "0",
-      "item": { "products": true, "supply": true, "merchants": true, "expiry": true }
+      "item": {
+        "products": true,
+        "supply": true,
+        "merchants": true,
+        "expiry": true
+      }
     },
     {
       "id": "1",
-      "item": { "products": true, "supply": true, "merchants": true, "expiry": true }
+      "item": {
+        "products": true,
+        "supply": true,
+        "merchants": true,
+        "expiry": true
+      }
     }
   ],
   "expiry": [
     {
       "id": "0",
       "items": [
-        {"date": "2024-10-01", "time": "23:59", "code": "OCT-7390-2158-GNJCBRMVP", "renew": true},
-        {"date": "2024-11-01", "time": "23:59", "code": "NOV-4187-9526-DLZTWEQSX", "renew": true},
-        {"date": "2024-12-01", "time": "23:59", "code": "DEC-6203-8514-VKPFAHJYR", "renew": true},
-        {"date": "2025-01-01", "time": "23:59", "code": "JAN-9675-3241-TWMBGLCQJ", "renew": true},
-        {"date": "2025-02-01", "time": "23:59", "code": "FEB-4092-6718-RSZKUHXNB", "renew": true},
-        {"date": "2025-03-01", "time": "23:59", "code": "MAR-7341-5089-CPEGDOYTF", "renew": true},
-        {"date": "2025-04-01", "time": "23:59", "code": "APR-2568-9471-LHVAXMWQZ", "renew": true},
-        {"date": "2025-05-01", "time": "23:59", "code": "MAY-8127-4603-BFSPJTKER", "renew": true},
-        {"date": "2025-06-01", "time": "23:59", "code": "JUN-3956-7214-XNCLVGHZD", "renew": true},
-        {"date": "2025-07-01", "time": "23:59", "code": "JUL-1829-6435-QRWTNBJLF", "renew": true},
-        {"date": "2025-08-01", "time": "23:59", "code": "AUG-5743-8291-KPMZRXVTW", "renew": true},
-        {"date": "2025-09-19", "time": "23:59", "code": "SEP-6927-4158-JPZVLBMDK", "renew": true}
+        {
+          "date": "2024-10-01",
+          "time": "23:59",
+          "code": "OCT-7390-2158-GNJCBRMVP",
+          "renew": true
+        },
+        {
+          "date": "2024-11-01",
+          "time": "23:59",
+          "code": "NOV-4187-9526-DLZTWEQSX",
+          "renew": true
+        },
+        {
+          "date": "2024-12-01",
+          "time": "23:59",
+          "code": "DEC-6203-8514-VKPFAHJYR",
+          "renew": true
+        },
+        {
+          "date": "2025-01-01",
+          "time": "23:59",
+          "code": "JAN-9675-3241-TWMBGLCQJ",
+          "renew": true
+        },
+        {
+          "date": "2025-02-01",
+          "time": "23:59",
+          "code": "FEB-4092-6718-RSZKUHXNB",
+          "renew": true
+        },
+        {
+          "date": "2025-03-01",
+          "time": "23:59",
+          "code": "MAR-7341-5089-CPEGDOYTF",
+          "renew": true
+        },
+        {
+          "date": "2025-04-01",
+          "time": "23:59",
+          "code": "APR-2568-9471-LHVAXMWQZ",
+          "renew": true
+        },
+        {
+          "date": "2025-05-01",
+          "time": "23:59",
+          "code": "MAY-8127-4603-BFSPJTKER",
+          "renew": true
+        },
+        {
+          "date": "2025-06-01",
+          "time": "23:59",
+          "code": "JUN-3956-7214-XNCLVGHZD",
+          "renew": true
+        },
+        {
+          "date": "2025-07-01",
+          "time": "23:59",
+          "code": "JUL-1829-6435-QRWTNBJLF",
+          "renew": true
+        },
+        {
+          "date": "2025-08-01",
+          "time": "23:59",
+          "code": "AUG-5743-8291-KPMZRXVTW",
+          "renew": true
+        },
+        {
+          "date": "2025-09-19",
+          "time": "23:59",
+          "code": "SEP-6927-4158-JPZVLBMDK",
+          "renew": true
+        }
       ]
     },
     {
       "id": "1",
       "items": [
-        {"date": "2025-09-19", "time": "23:59", "code": "SEP-6927-4158-QXZFMBVLK", "renew": true},
-        {"date": "2025-10-01", "time": "23:59", "code": "OCT-9435-2781-RWTZPABCN", "renew": true},
-        {"date": "2025-11-01", "time": "23:59", "code": "NOV-3518-7964-DGLKJHSXY", "renew": false},
-        {"date": "2025-12-01", "time": "23:59", "code": "DEC-7832-1546-MNTPQVRWE", "renew": false},
-        {"date": "2026-01-01", "time": "23:59", "code": "JAN-4621-8395-KBCFGHZAQ", "renew": false},
-        {"date": "2026-02-01", "time": "23:59", "code": "FEB-9137-5648-PSTUVXYRM", "renew": false},
-        {"date": "2026-03-01", "time": "23:59", "code": "MAR-3794-2186-JNWXDZLPT", "renew": false},
-        {"date": "2026-04-01", "time": "23:59", "code": "APR-6258-9413-BFGHKLQVS", "renew": false},
-        {"date": "2026-05-01", "time": "23:59", "code": "MAY-8165-7429-CTMRWXZPJ", "renew": false},
-        {"date": "2026-06-01", "time": "23:59", "code": "JUN-2934-6157-DHNSKABGF", "renew": false},
-        {"date": "2026-07-01", "time": "23:59", "code": "JUL-5871-3962-PYTVZRQCW", "renew": false},
-        {"date": "2026-08-01", "time": "23:59", "code": "AUG-7526-4913-MLNKHGFBD", "renew": false},
-        {"date": "2026-09-01", "time": "23:59", "code": "SEP-1387-6529-XZQWRTPLM", "renew": false},
-        {"date": "2026-10-01", "time": "23:59", "code": "OCT-8729-3641-ABCDEFGHI", "renew": false},
-        {"date": "2026-11-01", "time": "23:59", "code": "NOV-5216-7893-JKLMNOPQR", "renew": false},
-        {"date": "2026-12-01", "time": "23:59", "code": "DEC-9463-1578-STUVWXYZB", "renew": false},
-        {"date": "2027-01-01", "time": "23:59", "code": "JAN-3847-6925-CDFGHJKLP", "renew": false},
-        {"date": "2027-02-01", "time": "23:59", "code": "FEB-7159-2438-QRSTUVWZX", "renew": false},
-        {"date": "2027-03-01", "time": "23:59", "code": "MAR-5967-8314-AMNBVCXZY", "renew": false},
-        {"date": "2027-04-01", "time": "23:59", "code": "APR-8421-3975-PLOKIJMNH", "renew": false},
-        {"date": "2027-05-01", "time": "23:59", "code": "MAY-2643-7198-QAZWSXEDC", "renew": false},
-        {"date": "2027-06-01", "time": "23:59", "code": "JUN-9518-4672-RFVTGBYHN", "renew": false},
-        {"date": "2027-07-01", "time": "23:59", "code": "JUL-4176-8295-UJMIKLOPT", "renew": false},
-        {"date": "2027-08-01", "time": "23:59", "code": "AUG-6753-1489-YWXQAZPLS", "renew": false},
-        {"date": "2027-09-01", "time": "23:59", "code": "SEP-1825-3967-MKOJNHBGV", "renew": false},
-        {"date": "2027-10-01", "time": "23:59", "code": "OCT-7346-2591-FRCDEXSWZ", "renew": false},
-        {"date": "2027-11-01", "time": "23:59", "code": "NOV-5918-7634-VBTNYUMKL", "renew": false},
-        {"date": "2027-12-01", "time": "23:59", "code": "DEC-8274-3915-PQLWOEITX", "renew": false}
+        {
+          "date": "2025-09-19",
+          "time": "23:59",
+          "code": "SEP-6927-4158-QXZFMBVLK",
+          "renew": true
+        },
+        {
+          "date": "2025-10-01",
+          "time": "23:59",
+          "code": "OCT-9435-2781-RWTZPABCN",
+          "renew": true
+        },
+        {
+          "date": "2025-11-01",
+          "time": "23:59",
+          "code": "NOV-3518-7964-DGLKJHSXY",
+          "renew": false
+        },
+        {
+          "date": "2025-12-01",
+          "time": "23:59",
+          "code": "DEC-7832-1546-MNTPQVRWE",
+          "renew": false
+        },
+        {
+          "date": "2026-01-01",
+          "time": "23:59",
+          "code": "JAN-4621-8395-KBCFGHZAQ",
+          "renew": false
+        },
+        {
+          "date": "2026-02-01",
+          "time": "23:59",
+          "code": "FEB-9137-5648-PSTUVXYRM",
+          "renew": false
+        },
+        {
+          "date": "2026-03-01",
+          "time": "23:59",
+          "code": "MAR-3794-2186-JNWXDZLPT",
+          "renew": false
+        },
+        {
+          "date": "2026-04-01",
+          "time": "23:59",
+          "code": "APR-6258-9413-BFGHKLQVS",
+          "renew": false
+        },
+        {
+          "date": "2026-05-01",
+          "time": "23:59",
+          "code": "MAY-8165-7429-CTMRWXZPJ",
+          "renew": false
+        },
+        {
+          "date": "2026-06-01",
+          "time": "23:59",
+          "code": "JUN-2934-6157-DHNSKABGF",
+          "renew": false
+        },
+        {
+          "date": "2026-07-01",
+          "time": "23:59",
+          "code": "JUL-5871-3962-PYTVZRQCW",
+          "renew": false
+        },
+        {
+          "date": "2026-08-01",
+          "time": "23:59",
+          "code": "AUG-7526-4913-MLNKHGFBD",
+          "renew": false
+        },
+        {
+          "date": "2026-09-01",
+          "time": "23:59",
+          "code": "SEP-1387-6529-XZQWRTPLM",
+          "renew": false
+        },
+        {
+          "date": "2026-10-01",
+          "time": "23:59",
+          "code": "OCT-8729-3641-ABCDEFGHI",
+          "renew": false
+        },
+        {
+          "date": "2026-11-01",
+          "time": "23:59",
+          "code": "NOV-5216-7893-JKLMNOPQR",
+          "renew": false
+        },
+        {
+          "date": "2026-12-01",
+          "time": "23:59",
+          "code": "DEC-9463-1578-STUVWXYZB",
+          "renew": false
+        },
+        {
+          "date": "2027-01-01",
+          "time": "23:59",
+          "code": "JAN-3847-6925-CDFGHJKLP",
+          "renew": false
+        },
+        {
+          "date": "2027-02-01",
+          "time": "23:59",
+          "code": "FEB-7159-2438-QRSTUVWZX",
+          "renew": false
+        },
+        {
+          "date": "2027-03-01",
+          "time": "23:59",
+          "code": "MAR-5967-8314-AMNBVCXZY",
+          "renew": false
+        },
+        {
+          "date": "2027-04-01",
+          "time": "23:59",
+          "code": "APR-8421-3975-PLOKIJMNH",
+          "renew": false
+        },
+        {
+          "date": "2027-05-01",
+          "time": "23:59",
+          "code": "MAY-2643-7198-QAZWSXEDC",
+          "renew": false
+        },
+        {
+          "date": "2027-06-01",
+          "time": "23:59",
+          "code": "JUN-9518-4672-RFVTGBYHN",
+          "renew": false
+        },
+        {
+          "date": "2027-07-01",
+          "time": "23:59",
+          "code": "JUL-4176-8295-UJMIKLOPT",
+          "renew": false
+        },
+        {
+          "date": "2027-08-01",
+          "time": "23:59",
+          "code": "AUG-6753-1489-YWXQAZPLS",
+          "renew": false
+        },
+        {
+          "date": "2027-09-01",
+          "time": "23:59",
+          "code": "SEP-1825-3967-MKOJNHBGV",
+          "renew": false
+        },
+        {
+          "date": "2027-10-01",
+          "time": "23:59",
+          "code": "OCT-7346-2591-FRCDEXSWZ",
+          "renew": false
+        },
+        {
+          "date": "2027-11-01",
+          "time": "23:59",
+          "code": "NOV-5918-7634-VBTNYUMKL",
+          "renew": false
+        },
+        {
+          "date": "2027-12-01",
+          "time": "23:59",
+          "code": "DEC-8274-3915-PQLWOEITX",
+          "renew": false
+        }
       ]
     }
   ]
