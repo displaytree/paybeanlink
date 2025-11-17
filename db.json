@@ -119,8 +119,8 @@
           "metrics": "unit",
           "gst": 5,
           "mrp": 160,
-          "wsp": 160,
-          "sp": 160
+          "wsp": 150,
+          "sp": 140
         },
         {
           "name": "Golden Gate Chicken Pizza",
@@ -128,8 +128,8 @@
           "metrics": "unit",
           "gst": 5,
           "mrp": 180,
-          "wsp": 180,
-          "sp": 180
+          "wsp": 170,
+          "sp": 160
         },
         {
           "name": "Supreme Pepper Chicken Pizza",
@@ -137,8 +137,8 @@
           "metrics": "unit",
           "gst": 5,
           "mrp": 180,
-          "wsp": 180,
-          "sp": 180
+          "wsp": 170,
+          "sp": 160
         },
         {
           "name": "BBQ Chicken Pizza",
@@ -146,8 +146,8 @@
           "metrics": "unit",
           "gst": 18,
           "mrp": 190,
-          "wsp": 190,
-          "sp": 190
+          "wsp": 180,
+          "sp": 170
         },
         {
           "name": "Chicken Delight Pizza",
@@ -155,8 +155,8 @@
           "metrics": "unit",
           "gst": 18,
           "mrp": 210,
-          "wsp": 210,
-          "sp": 210
+          "wsp": 200,
+          "sp": 190
         },
         {
           "name": "Tandoori Tikka Chicken Pizza",
@@ -164,8 +164,8 @@
           "metrics": "unit",
           "gst": 5,
           "mrp": 190,
-          "wsp": 190,
-          "sp": 190
+          "wsp": 180,
+          "sp": 170
         },
         {
           "name": "Wheat bread",
@@ -173,16 +173,16 @@
           "metrics": "unit",
           "gst": 0,
           "mrp": 50,
-          "wsp": 50,
-          "sp": 50
+          "wsp": 45,
+          "sp": 40
         },
         {
           "name": "milk Bread",
           "discount": 0,
           "metrics": "unit",
           "gst": 0,
-          "mrp": 35,
-          "wsp": 35,
+          "mrp": 55,
+          "wsp": 45,
           "sp": 35
         },
         {
@@ -191,8 +191,8 @@
           "metrics": "unit",
           "gst": 5,
           "mrp": 100,
-          "wsp": 100,
-          "sp": 100
+          "wsp": 90,
+          "sp": 80
         }
       ]
     },
