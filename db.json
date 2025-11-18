@@ -107,6 +107,14 @@
           "name": "Vijitha"
         }
       ]
+    },
+    {
+      "id": "2",
+      "items": [
+        {
+          "name": "Bombay"
+        }
+      ]
     }
   ],
   "products": [
@@ -2873,6 +2881,821 @@
           "sp": 150
         }
       ]
+    },
+    {
+      "id": "2",
+      "items": [
+        {
+          "name": "Idli (1 Set)",
+          "mrp": 5.0,
+          "wsp": 5.0,
+          "sp": 5.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Dosa",
+          "mrp": 5.0,
+          "wsp": 5.0,
+          "sp": 5.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Parata",
+          "mrp": 5.0,
+          "wsp": 5.0,
+          "sp": 5.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Uttappam",
+          "mrp": 9.0,
+          "wsp": 9.0,
+          "sp": 9.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Onion Uttappam",
+          "mrp": 13.0,
+          "wsp": 13.0,
+          "sp": 13.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Egg Uttappam",
+          "mrp": 13.0,
+          "wsp": 13.0,
+          "sp": 13.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Egg Roast",
+          "mrp": 13.0,
+          "wsp": 13.0,
+          "sp": 13.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Mehi Roast",
+          "mrp": 13.0,
+          "wsp": 13.0,
+          "sp": 13.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Roast",
+          "mrp": 9.0,
+          "wsp": 9.0,
+          "sp": 9.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Mutta Parata",
+          "mrp": 15.0,
+          "wsp": 15.0,
+          "sp": 15.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Veech Parata",
+          "mrp": 6.0,
+          "wsp": 6.0,
+          "sp": 6.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Egg Veech Parata",
+          "mrp": 9.0,
+          "wsp": 9.0,
+          "sp": 9.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Omelet",
+          "mrp": 5.0,
+          "wsp": 5.0,
+          "sp": 5.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Half Boil",
+          "mrp": 4.0,
+          "wsp": 4.0,
+          "sp": 4.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Kalki / Loose Boil",
+          "mrp": 4.0,
+          "wsp": 4.0,
+          "sp": 4.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Full Boil",
+          "mrp": 4.0,
+          "wsp": 4.0,
+          "sp": 4.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Mutta Porial",
+          "mrp": 6.0,
+          "wsp": 6.0,
+          "sp": 6.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Puri Set",
+          "mrp": 10.0,
+          "wsp": 10.0,
+          "sp": 10.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Pongal",
+          "mrp": 10.0,
+          "wsp": 10.0,
+          "sp": 10.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Khichidi",
+          "mrp": 10.0,
+          "wsp": 10.0,
+          "sp": 10.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Semiya",
+          "mrp": 10.0,
+          "wsp": 10.0,
+          "sp": 10.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Upma",
+          "mrp": 10.0,
+          "wsp": 10.0,
+          "sp": 10.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Veg Biryani",
+          "mrp": 20.0,
+          "wsp": 20.0,
+          "sp": 20.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "Plain Biryani",
+          "mrp": 15.0,
+          "wsp": 15.0,
+          "sp": 15.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Chicken Biryani",
+          "mrp": 30.0,
+          "wsp": 30.0,
+          "sp": 30.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "Egg Biryani (Double)",
+          "mrp": 25.0,
+          "wsp": 25.0,
+          "sp": 25.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "Chicken Rice",
+          "mrp": 25.0,
+          "wsp": 25.0,
+          "sp": 25.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "Egg Rice",
+          "mrp": 20.0,
+          "wsp": 20.0,
+          "sp": 20.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Veg Rice",
+          "mrp": 15.0,
+          "wsp": 15.0,
+          "sp": 15.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Chicken Season Rice",
+          "mrp": 30.0,
+          "wsp": 30.0,
+          "sp": 30.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "Egg Season Rice",
+          "mrp": 25.0,
+          "wsp": 25.0,
+          "sp": 25.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "Veg Season rice",
+          "mrp": 20.0,
+          "wsp": 20.0,
+          "sp": 20.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Chicken Noodles",
+          "mrp": 25.0,
+          "wsp": 25.0,
+          "sp": 25.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "Egg Noodles",
+          "mrp": 20.0,
+          "wsp": 20.0,
+          "sp": 20.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Veg Noodles",
+          "mrp": 15.0,
+          "wsp": 15.0,
+          "sp": 15.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Chicken Season Noodles",
+          "mrp": 30.0,
+          "wsp": 30.0,
+          "sp": 30.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "Egg Season Noodles",
+          "mrp": 25.0,
+          "wsp": 25.0,
+          "sp": 25.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "Veg Season Noodles",
+          "mrp": 20.0,
+          "wsp": 20.0,
+          "sp": 20.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Chicken Manchurian",
+          "mrp": 25.0,
+          "wsp": 25.0,
+          "sp": 25.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "Chicken Monica",
+          "mrp": 30.0,
+          "wsp": 30.0,
+          "sp": 30.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "Chicken Fry",
+          "mrp": 25.0,
+          "wsp": 25.0,
+          "sp": 25.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "Gobi Manchurian",
+          "mrp": 20.0,
+          "wsp": 20.0,
+          "sp": 20.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Mushroom Manchurian",
+          "mrp": 25.0,
+          "wsp": 25.0,
+          "sp": 25.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "Chilly Chicken (Boneless)",
+          "mrp": 25.0,
+          "wsp": 25.0,
+          "sp": 25.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "Chicken 65",
+          "mrp": 30.0,
+          "wsp": 30.0,
+          "sp": 30.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "Kovai Special Chicken",
+          "mrp": 25.0,
+          "wsp": 25.0,
+          "sp": 25.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "Baby Corn Manchurian",
+          "mrp": 25.0,
+          "wsp": 25.0,
+          "sp": 25.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "Baby Corn Chilly",
+          "mrp": 20.0,
+          "wsp": 20.0,
+          "sp": 20.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Chilly Gobi",
+          "mrp": 20.0,
+          "wsp": 20.0,
+          "sp": 20.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Mushroom Chilly",
+          "mrp": 20.0,
+          "wsp": 20.0,
+          "sp": 20.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Chilly Fish",
+          "mrp": 25.0,
+          "wsp": 25.0,
+          "sp": 25.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "Nan",
+          "mrp": 7.0,
+          "wsp": 7.0,
+          "sp": 7.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Butter Nan",
+          "mrp": 10.0,
+          "wsp": 10.0,
+          "sp": 10.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Veg Nan",
+          "mrp": 12.0,
+          "wsp": 12.0,
+          "sp": 12.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Garlic Nan",
+          "mrp": 13.0,
+          "wsp": 13.0,
+          "sp": 13.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Kulcha",
+          "mrp": 8.0,
+          "wsp": 8.0,
+          "sp": 8.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Butter Kulcha",
+          "mrp": 10.0,
+          "wsp": 10.0,
+          "sp": 10.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Lachha Parata",
+          "mrp": 15.0,
+          "wsp": 15.0,
+          "sp": 15.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Romali Roti",
+          "mrp": 7.0,
+          "wsp": 7.0,
+          "sp": 7.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Tandoori Roti",
+          "mrp": 8.0,
+          "wsp": 8.0,
+          "sp": 8.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Tandoori Parata",
+          "mrp": 12.0,
+          "wsp": 12.0,
+          "sp": 12.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Veg Gravy",
+          "mrp": 25.0,
+          "wsp": 25.0,
+          "sp": 25.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "Channa Masala",
+          "mrp": 25.0,
+          "wsp": 25.0,
+          "sp": 25.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "Gobi Masala",
+          "mrp": 25.0,
+          "wsp": 25.0,
+          "sp": 25.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "Green Peas Malasa",
+          "mrp": 25.0,
+          "wsp": 25.0,
+          "sp": 25.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "Panneer Butter Masala",
+          "mrp": 30.0,
+          "wsp": 30.0,
+          "sp": 30.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "Kadai Vegetable",
+          "mrp": 30.0,
+          "wsp": 30.0,
+          "sp": 30.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "Kadai Panner",
+          "mrp": 35.0,
+          "wsp": 35.0,
+          "sp": 35.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "Mushroom Masala",
+          "mrp": 30.0,
+          "wsp": 30.0,
+          "sp": 30.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "Baby Corn Masala",
+          "mrp": 25.0,
+          "wsp": 25.0,
+          "sp": 25.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "Alu Gobi Masala",
+          "mrp": 25.0,
+          "wsp": 25.0,
+          "sp": 25.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "Chicken Masala",
+          "mrp": 30.0,
+          "wsp": 30.0,
+          "sp": 30.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "Butter Chicken",
+          "mrp": 35.0,
+          "wsp": 35.0,
+          "sp": 35.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "Garlic Chicken",
+          "mrp": 35.0,
+          "wsp": 35.0,
+          "sp": 35.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "Ginger Chicken",
+          "mrp": 35.0,
+          "wsp": 35.0,
+          "sp": 35.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "Kadai Chicken",
+          "mrp": 35.0,
+          "wsp": 35.0,
+          "sp": 35.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "Hyderabad Chicken",
+          "mrp": 35.0,
+          "wsp": 35.0,
+          "sp": 35.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "Chicken Curry",
+          "mrp": 40.0,
+          "wsp": 40.0,
+          "sp": 40.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "Egg Masala",
+          "mrp": 30.0,
+          "wsp": 30.0,
+          "sp": 30.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "Chicken Chettinad",
+          "mrp": 35.0,
+          "wsp": 35.0,
+          "sp": 35.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "Chicken Lollypop(2 Nos)",
+          "mrp": 15.0,
+          "wsp": 15.0,
+          "sp": 15.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Veg Spring Roll",
+          "mrp": 20.0,
+          "wsp": 20.0,
+          "sp": 20.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Chicken Spring Roll",
+          "mrp": 25.0,
+          "wsp": 25.0,
+          "sp": 25.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "American Chops",
+          "mrp": 30.0,
+          "wsp": 30.0,
+          "sp": 30.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 5
+        },
+        {
+          "name": "Tomato Soup",
+          "mrp": 10.0,
+          "wsp": 10.0,
+          "sp": 10.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Veg Clear Soup",
+          "mrp": 8.0,
+          "wsp": 8.0,
+          "sp": 8.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Chicken Clear Soup",
+          "mrp": 10.0,
+          "wsp": 10.0,
+          "sp": 10.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Pepper Clear Soup",
+          "mrp": 8.0,
+          "wsp": 8.0,
+          "sp": 8.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Sweet Corn Veg Soup",
+          "mrp": 8.0,
+          "wsp": 8.0,
+          "sp": 8.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        },
+        {
+          "name": "Chicken soup",
+          "mrp": 10.0,
+          "wsp": 10.0,
+          "sp": 10.0,
+          "discount": 0,
+          "metrics": "unit",
+          "gst": 0
+        }
+      ]
     }
   ],
   "new": [
@@ -2887,6 +3710,15 @@
     },
     {
       "id": "1",
+      "item": {
+        "products": true,
+        "supply": true,
+        "merchants": true,
+        "expiry": true
+      }
+    },
+    {
+      "id": "2",
       "item": {
         "products": true,
         "supply": true,
