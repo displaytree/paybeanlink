@@ -3720,9 +3720,9 @@
     {
       "id": "2",
       "item": {
-        "products": true,
-        "supply": true,
-        "merchants": true,
+        "products": false,
+        "supply": false,
+        "merchants": false,
         "expiry": true
       }
     }
